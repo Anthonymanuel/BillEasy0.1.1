@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4638F78-7508-4C9D-B518-5730C2E3DF8A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BillEasy0._1._0</RootNamespace>
+    <AssemblyName>BillEasy0.1.0</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BillEasy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillEasy.Designer.cs">
+      <DependentUpon>BillEasy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaCiudad.Designer.cs">
+      <DependentUpon>ConsultaCiudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes.Designer.cs">
+      <DependentUpon>ConsultaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaMarca.Designer.cs">
+      <DependentUpon>ConsultaMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaProducto.Designer.cs">
+      <DependentUpon>ConsultaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaProveedores.Designer.cs">
+      <DependentUpon>ConsultaProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaUsuario.Designer.cs">
+      <DependentUpon>ConsultaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroCiudad.Designer.cs">
+      <DependentUpon>RegistroCiudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroClientes.Designer.cs">
+      <DependentUpon>RegistroClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroMarca.Designer.cs">
+      <DependentUpon>RegistroMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroProducto.Designer.cs">
+      <DependentUpon>RegistroProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroProveedor.Designer.cs">
+      <DependentUpon>RegistroProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroUsuario.Designer.cs">
+      <DependentUpon>RegistroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BillEasy.resx">
+      <DependentUpon>BillEasy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaCiudad.resx">
+      <DependentUpon>ConsultaCiudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaClientes.resx">
+      <DependentUpon>ConsultaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaMarca.resx">
+      <DependentUpon>ConsultaMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaProducto.resx">
+      <DependentUpon>ConsultaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaProveedores.resx">
+      <DependentUpon>ConsultaProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaUsuario.resx">
+      <DependentUpon>ConsultaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RegistroCiudad.resx">
+      <DependentUpon>RegistroCiudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroClientes.resx">
+      <DependentUpon>RegistroClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroMarca.resx">
+      <DependentUpon>RegistroMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroProducto.resx">
+      <DependentUpon>RegistroProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroProveedor.resx">
+      <DependentUpon>RegistroProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroUsuario.resx">
+      <DependentUpon>RegistroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{913d940f-cdc2-4649-922e-b5bacf91a44e}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1445976487_Check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1445976510_Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1445976554_Plus__Orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1445977752_Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1443839488_file_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1446228633_kde-folder-print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Melvin BillEasy.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

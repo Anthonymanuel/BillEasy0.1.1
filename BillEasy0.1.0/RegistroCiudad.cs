@@ -1,0 +1,136 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using BLL;
+using System.Text.RegularExpressions;
+namespace BillEasy0._1._0
+{
+    public partial class RegistroCiudad : Form
+    {
+        public RegistroCiudad()
+        {
+            InitializeComponent();
+        }
+
+        private void LlenarDatos(Ciudades ciudad)
+        {
+            ciudad.Nombre = NombreTextBox.Text;
+            int codigoPostal;
+            int.TryParse(CodigoPostalTextBox.Text, out codigoPostal);
+            ciudad.CodigoPostal = codigoPostal;
+        }
+
+        private int Validar()
+        {
+            int retorno = 0;
+            if (NombreTextBox.Text == "" || CodigoPostalTextBox.Text == "")
+            {
+                MessageBox.Show("Complete los campos que estan vacios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+                if (!Regex.Match(CodigoPostalTextBox.Text, @"^\d{5}$").Success)
+                {
+                    MessageBox.Show("Codigo postal invalido", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CodigoPostalTextBox.Focus();
+                }
+                else
+                {
+                    Regex espacio = new Regex(@"\s+");
+                    NombreTextBox.Text = espacio.Replace(NombreTextBox.Text, " ");
+                    retorno += 1;
+                }
+            }
+            return retorno;
+        }
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            Ciudades ciudad = new Ciudades();
+            int id;
+            int.TryParse(CiudadIdtextBox.Text, out id);
+            ciudad.Buscar(id);
+            CiudadIdtextBox.Text = ciudad.CiudadId.ToString();
+            NombreTextBox.Text = ciudad.Nombre;
+            CodigoPostalTextBox.Text = ciudad.CodigoPostal.ToString();
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            CiudadIdtextBox.Clear();
+            NombreTextBox.Clear();
+            CodigoPostalTextBox.Clear();
+        }
+
+        private void ButtonGuardar_Click(object sender, EventArgs e)
+        {
+            Ciudades ciudad = new Ciudades();
+            if (CiudadIdtextBox.Text.Length > 0 && Validar() == 1)
+            {
+
+                int id;
+                int.TryParse(CiudadIdtextBox.Text, out id);
+                ciudad.CiudadId = id;
+                LlenarDatos(ciudad);
+                if (ciudad.Editar())
+                {
+                    MessageBox.Show("Ciudad Editada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Nuevobutton.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Debe de completar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            if (NombreTextBox.TextLength == 0)
+            {
+                MessageBox.Show("Debe de completar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (CiudadIdtextBox.Text.Length == 0 && Validar() == 1)
+            {
+                LlenarDatos(ciudad);
+                if (ciudad.Insertar())
+                {
+                    MessageBox.Show("Ciudad Guardada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Nuevobutton.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Error al insertar la ciudad", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            Ciudades ciudad = new Ciudades();
+            int id;
+            if (CiudadIdtextBox.TextLength == 0)
+            {
+                MessageBox.Show("Debe especificar el ID", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            if (CiudadIdtextBox.Text.Length > 0)
+            {
+                int.TryParse(CiudadIdtextBox.Text, out id);
+                ciudad.CiudadId = id;
+                if (ciudad.Eliminar())
+                {
+                    MessageBox.Show("Ciudad Eliminada correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Nuevobutton.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar la ciudad", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+    }
+}
