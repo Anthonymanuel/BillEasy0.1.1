@@ -34,6 +34,10 @@ namespace BillEasy0._1._0
                 miError.SetError(NombreTextBox, "Debe llenar el nombre de la marca");
                 contador += 1;
             }
+            else
+            {
+                miError.SetError(NombreTextBox, "");
+            }
             return contador;
         }
 
@@ -72,7 +76,7 @@ namespace BillEasy0._1._0
                 marca.MarcaId = id;
                 LlenarDatos(marca);
                 Validar();
-                if (marca.Editar())
+                if (marca.Editar() && Error() == 0 && Validar() == 1 )
                 {
                     MessageBox.Show("Marca Editada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Nuevobutton.PerformClick();
@@ -82,7 +86,7 @@ namespace BillEasy0._1._0
                     MessageBox.Show("Error al insertar la marca ", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (MarcaIdtextBox.Text.Length == 0 && Validar() == 1 && Error() == 0)
+            else if (MarcaIdtextBox.Text.Length == 0 && Error() == 0 && Validar() == 1 )
             {
                 LlenarDatos(marca);
                 Error();

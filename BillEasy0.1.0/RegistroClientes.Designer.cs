@@ -41,17 +41,17 @@
             this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.CelularmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.EmailtextBox = new System.Windows.Forms.TextBox();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.GuardarButton = new System.Windows.Forms.Button();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.DirecciontextBox = new System.Windows.Forms.TextBox();
             this.DatosgroupBox = new System.Windows.Forms.GroupBox();
+            this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.CiudadcomboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.CedulamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.DatosgroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,44 +162,44 @@
             this.EmailtextBox.Size = new System.Drawing.Size(181, 20);
             this.EmailtextBox.TabIndex = 12;
             // 
-            // Guardarbutton
+            // GuardarButton
             // 
-            this.Guardarbutton.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
-            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(363, 185);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(79, 47);
-            this.Guardarbutton.TabIndex = 15;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            this.GuardarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GuardarButton.Location = new System.Drawing.Point(363, 185);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(79, 47);
+            this.GuardarButton.TabIndex = 15;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // Eliminarbutton
+            // EliminarButton
             // 
-            this.Eliminarbutton.Image = global::BillEasy0._1._0.Properties.Resources._1445976510_Delete;
-            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(455, 185);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(79, 47);
-            this.Eliminarbutton.TabIndex = 16;
-            this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
-            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
+            this.EliminarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976510_Delete;
+            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarButton.Location = new System.Drawing.Point(455, 185);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(79, 47);
+            this.EliminarButton.TabIndex = 16;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
-            // Nuevobutton
+            // NuevoButton
             // 
-            this.Nuevobutton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
-            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(267, 185);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(79, 47);
-            this.Nuevobutton.TabIndex = 14;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            this.NuevoButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
+            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NuevoButton.Location = new System.Drawing.Point(267, 185);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(79, 47);
+            this.NuevoButton.TabIndex = 14;
+            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Buscarbutton
             // 
@@ -234,13 +234,13 @@
             // 
             this.DatosgroupBox.Controls.Add(this.CedulamaskedTextBox);
             this.DatosgroupBox.Controls.Add(this.label9);
-            this.DatosgroupBox.Controls.Add(this.Eliminarbutton);
+            this.DatosgroupBox.Controls.Add(this.EliminarButton);
             this.DatosgroupBox.Controls.Add(this.label7);
             this.DatosgroupBox.Controls.Add(this.CelularmaskedTextBox);
             this.DatosgroupBox.Controls.Add(this.label5);
-            this.DatosgroupBox.Controls.Add(this.Guardarbutton);
+            this.DatosgroupBox.Controls.Add(this.GuardarButton);
             this.DatosgroupBox.Controls.Add(this.CiudadcomboBox);
-            this.DatosgroupBox.Controls.Add(this.Nuevobutton);
+            this.DatosgroupBox.Controls.Add(this.NuevoButton);
             this.DatosgroupBox.Controls.Add(this.ClienteIdtextBox);
             this.DatosgroupBox.Controls.Add(this.DirecciontextBox);
             this.DatosgroupBox.Controls.Add(this.label1);
@@ -260,6 +260,14 @@
             this.DatosgroupBox.TabIndex = 20;
             this.DatosgroupBox.TabStop = false;
             this.DatosgroupBox.Text = "Datos Clientes";
+            // 
+            // CedulamaskedTextBox
+            // 
+            this.CedulamaskedTextBox.Location = new System.Drawing.Point(322, 145);
+            this.CedulamaskedTextBox.Mask = "000-0000000-0";
+            this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
+            this.CedulamaskedTextBox.Size = new System.Drawing.Size(181, 20);
+            this.CedulamaskedTextBox.TabIndex = 22;
             // 
             // label9
             // 
@@ -283,19 +291,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Monotype Corsiva", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(168, 24);
+            this.label10.Location = new System.Drawing.Point(165, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(229, 36);
             this.label10.TabIndex = 21;
             this.label10.Text = "Registro de clientes";
-            // 
-            // CedulamaskedTextBox
-            // 
-            this.CedulamaskedTextBox.Location = new System.Drawing.Point(322, 145);
-            this.CedulamaskedTextBox.Mask = "000-0000000-0";
-            this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
-            this.CedulamaskedTextBox.Size = new System.Drawing.Size(181, 20);
-            this.CedulamaskedTextBox.TabIndex = 22;
             // 
             // RegistroClientes
             // 
@@ -332,9 +332,9 @@
         private System.Windows.Forms.MaskedTextBox TelefonomaskedTextBox;
         private System.Windows.Forms.MaskedTextBox CelularmaskedTextBox;
         private System.Windows.Forms.TextBox EmailtextBox;
-        private System.Windows.Forms.Button Nuevobutton;
-        private System.Windows.Forms.Button Guardarbutton;
-        private System.Windows.Forms.Button Eliminarbutton;
+        private System.Windows.Forms.Button NuevoButton;
+        private System.Windows.Forms.Button GuardarButton;
+        private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox DirecciontextBox;

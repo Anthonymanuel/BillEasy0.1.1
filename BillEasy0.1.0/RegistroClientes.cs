@@ -13,9 +13,11 @@ namespace BillEasy0._1._0
 {
     public partial class RegistroClientes : Form
     {
+        ErrorProvider miError;
         public RegistroClientes()
         {
             InitializeComponent();
+            miError = new ErrorProvider();
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -29,6 +31,7 @@ namespace BillEasy0._1._0
             EmailtextBox.Clear();
             CedulamaskedTextBox.Clear();
         }
+
         public void Datos(Clientes clientes)
         {
             
@@ -44,13 +47,84 @@ namespace BillEasy0._1._0
             clientes.Email = EmailtextBox.Text;
             clientes.Cedula = CedulamaskedTextBox.Text;
         }
+
+        private int Error()
+        {
+            int contador = 0;
+
+            if (NombrestextBox.Text == "")
+            {
+                miError.SetError(NombrestextBox, "Debe llenar el nombre del cliente");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(NombrestextBox, "");
+            }
+            if (ApellidostextBox.Text == "")
+            {
+                miError.SetError(ApellidostextBox, "Debe llenar el apellido");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(ApellidostextBox, "");
+            }
+            if (TelefonomaskedTextBox.Text == "")
+            {
+                miError.SetError(TelefonomaskedTextBox, "Debe llenar el numero de telefono");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(TelefonomaskedTextBox, "");
+            }
+            if (CelularmaskedTextBox.Text == "")
+            {
+                miError.SetError(CelularmaskedTextBox, "Debe llenar el email");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(CelularmaskedTextBox, "");
+            }
+            if (DirecciontextBox.Text == "")
+            {
+                miError.SetError(DirecciontextBox, "Debe llenar la direccion");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(DirecciontextBox, "");
+            }
+            if (EmailtextBox.Text == "")
+            {
+                miError.SetError(EmailtextBox, "Debe llenar el  email");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(EmailtextBox, "");
+            }
+            if (CedulamaskedTextBox.Text == "")
+            {
+                miError.SetError(CedulamaskedTextBox, "Debe llenar el  numero de telefono");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(CedulamaskedTextBox, "");
+            }
+            return contador;
+        }
+
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Clientes clientes = new Clientes();
             if(ClienteIdtextBox.TextLength == 0)
             {
                 Datos(clientes);
-                if (clientes.Insertar())
+                if (Error() == 0 && clientes.Insertar())
                 {
                     MessageBox.Show("Cliente insertado","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
@@ -58,11 +132,11 @@ namespace BillEasy0._1._0
                 {
                     MessageBox.Show("Error tratndo de insertar el cliente","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
-                Nuevobutton.PerformClick();            }
+                NuevoButton.PerformClick();            }
             else
             {
                 Datos(clientes);
-                if (clientes.Editar())
+                if (Error() == 0 && clientes.Editar())
                 {
                     MessageBox.Show("Se edito Correctamente","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
@@ -70,7 +144,7 @@ namespace BillEasy0._1._0
                 {
                     MessageBox.Show("Error al editar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                Nuevobutton.PerformClick();
+                NuevoButton.PerformClick();
             }
         }
         public int ConversionId()

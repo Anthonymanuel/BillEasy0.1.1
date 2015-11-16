@@ -21,9 +21,19 @@ namespace BillEasy0._1._0
             BuscarcomboBox.SelectedIndex = 0;
         }
 
-        public void Error()
+        public int Error()
         {
-            miError.SetError(DatostextBox, "Debe Completar el campo");
+            int contador = 0;
+            if (DatostextBox.TextLength == 0)
+            {
+                miError.SetError(DatostextBox, "Debe Completar el campo");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(DatostextBox, "");
+            }
+            return contador;
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
@@ -46,7 +56,9 @@ namespace BillEasy0._1._0
                     }
                     else
                     {
-                        condicion = "CiudadId = " + DatostextBox.Text;
+                        int id;
+                        int.TryParse(DatostextBox.Text,out id);
+                        condicion = "CiudadId = " + id.ToString();
                     }
                     dataTable = ciudad.Listado(" CiudadId, Nombre, CodigoPostal ", condicion, "");
                     DatosdataGridView.DataSource = dataTable;

@@ -136,7 +136,7 @@
             // 
             this.ButtonGuardar.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
             this.ButtonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonGuardar.Location = new System.Drawing.Point(435, 181);
+            this.ButtonGuardar.Location = new System.Drawing.Point(425, 181);
             this.ButtonGuardar.MaximumSize = new System.Drawing.Size(81, 44);
             this.ButtonGuardar.MinimumSize = new System.Drawing.Size(81, 44);
             this.ButtonGuardar.Name = "ButtonGuardar";
@@ -151,7 +151,7 @@
             // 
             this.EliminarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976510_Delete;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(542, 180);
+            this.EliminarButton.Location = new System.Drawing.Point(521, 180);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(79, 47);
             this.EliminarButton.TabIndex = 47;
@@ -300,11 +300,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 347);
+            this.ClientSize = new System.Drawing.Size(690, 347);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroProveedor";
-            this.Text = "Registro de Proveedores";
+            this.Text = "Registro de proveedores";
+            this.Load += new System.EventHandler(this.RegistroProveedor_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -14,10 +14,12 @@ namespace BillEasy0._1._0
 {
     public partial class RegistroUsuario : Form
     {
+        ErrorProvider miError;
         public RegistroUsuario()
         {
             InitializeComponent();
             FechamaskedTextBox.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Now);
+            miError = new ErrorProvider();
         }
 
         private void LlenarDatos(Usuarios usuarios)
@@ -29,15 +31,54 @@ namespace BillEasy0._1._0
             usuarios.Fecha = FechamaskedTextBox.Text;
         }
 
-        private int Validar()
+        private int Error()
         {
-            int retorno = 0;
-            if (NombreTextBox.Text == "" || NombreUsuarioTextBox.Text == "" || ContrasenaTextBox.Text == "" || AreaTextBox.Text == "")
+            int contador = 0;
+
+            if (NombreTextBox.Text == "")
             {
-                MessageBox.Show("Complete los campos que estan vacios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                miError.SetError(NombreTextBox, "Debe llenar el nombre del empleado");
+                contador = 1;
             }
             else
             {
+                miError.SetError(NombreTextBox, "");
+            }
+            if (NombreUsuarioTextBox.Text == "")
+            {
+                miError.SetError(NombreUsuarioTextBox, "Debe llenar el nombre de usuario");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(NombreUsuarioTextBox, "");
+            }
+            if (ContrasenaTextBox.Text == "")
+            {
+                miError.SetError(ContrasenaTextBox, "Debe llenar la contraseña");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(ContrasenaTextBox, "");
+            }
+            if (AreaTextBox.Text == "")
+            {
+                miError.SetError(AreaTextBox, "Debe llenar el nombre de usuario");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(AreaTextBox, "");
+            }
+           
+            return contador;
+        }
+
+        private int Validar()
+        {
+            int retorno = 0;
+          
                 if (!Regex.Match(NombreTextBox.Text, "^[A-Z][a-zA-Z]*$").Success)
                 {
                     MessageBox.Show("Nombre  invalido", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -53,7 +94,7 @@ namespace BillEasy0._1._0
                 }
 
 
-            }
+            
             return retorno;
         }
 
@@ -85,7 +126,7 @@ namespace BillEasy0._1._0
         {
             Usuarios usuarios = new Usuarios();
 
-            if (UsuarioIdtextBox.Text.Length > 0 && Validar() == 1)
+            if (UsuarioIdtextBox.Text.Length > 0 && Error() == 0 && Validar() == 1)
             {
                 int id;
                 int.TryParse(UsuarioIdtextBox.Text, out id);
@@ -101,12 +142,7 @@ namespace BillEasy0._1._0
                     MessageBox.Show("Debe de completar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            if (NombreTextBox.TextLength == 0 || NombreUsuarioTextBox.TextLength == 0 || ContrasenaTextBox.TextLength == 0 || AreaTextBox.TextLength == 0)
-            {
-                MessageBox.Show("Debe de completar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (UsuarioIdtextBox.Text.Length == 0 && Validar() == 1)
+            else if (UsuarioIdtextBox.Text.Length == 0 && Error() == 0  && Validar() == 1)
             {
 
                 LlenarDatos(usuarios);

@@ -76,7 +76,7 @@ namespace BLL
         {
             DataTable dt = new DataTable();
             ConexionDb conexion = new ConexionDb();
-            dt = conexion.ObtenerDatos((String.Format("Select CiudadId, NombreEmpresa,Direccion,Telefono,Email,RNC,NombreRepresentante,Celular From Proveedores where ProveedorId = {0} ", idBuscado)));
+            dt = conexion.ObtenerDatos((String.Format("Select ProveedorId,CiudadId, NombreEmpresa,Direccion,Telefono,Email,RNC,NombreRepresentante,Celular From Proveedores where ProveedorId = {0} ", idBuscado)));
 
             if (dt.Rows.Count > 0)
             {

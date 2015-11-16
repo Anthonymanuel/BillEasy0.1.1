@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using BLL;
 
 namespace BillEasy0._1._0
@@ -20,23 +21,28 @@ namespace BillEasy0._1._0
             InitializeComponent();
             BuscarcomboBox.SelectedIndex = 0;
         }
-
-        public void Error()
+        public int Error()
         {
-            miError.SetError(DatostextBox, "Debe Completar el campo");
+            int contador = 0;
+            if (DatostextBox.TextLength == 0)
+            {
+                miError.SetError(DatostextBox, "Debe Completar el campo");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(DatostextBox, "");
+            }
+            return contador;
         }
 
-        private void Buscarbutton_Click(object sender, EventArgs e)
+        private void Buscarbutton_Click_1(object sender, EventArgs e)
         {
             Productos producto = new Productos();
             DataTable dataTable = new DataTable();
             string condicion;
 
-            if (DatostextBox.TextLength == 0)
-            {
-                Error();
-            }
-            else
+            if (Error() == 0)
             {
                 if (BuscarcomboBox.SelectedIndex == 0)
                 {
@@ -46,7 +52,9 @@ namespace BillEasy0._1._0
                     }
                     else
                     {
-                        condicion = " ProductoId = " + DatostextBox.Text;
+                        int id;
+                        int.TryParse(DatostextBox.Text, out id);
+                        condicion = " ProductoId = " + id.ToString();
                     }
                     dataTable = producto.Listado(" ProductoId,ProveedorId,MarcaId,Nombre,Cantidad,Precio,Costo,ITBIS ", condicion, "");
                     DatosdataGridView.DataSource = dataTable;
@@ -94,6 +102,8 @@ namespace BillEasy0._1._0
                 }
 
             }
+        
+
         }
     }
 }

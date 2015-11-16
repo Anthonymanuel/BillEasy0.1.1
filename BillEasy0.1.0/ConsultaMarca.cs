@@ -20,21 +20,28 @@ namespace BillEasy0._1._0
             BuscarcomboBox.SelectedIndex = 0;
         }
 
-        public void Error()
+        public int Error()
         {
-            miError.SetError(DatostextBox, "Debe Completar el campo");
+            int contador = 0;
+            if (DatostextBox.TextLength == 0)
+            {
+                miError.SetError(DatostextBox, "Debe Completar el campo");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(DatostextBox, "");
+            }
+            return contador;
         }
+
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             Marcas marca = new Marcas();
             DataTable dataTable = new DataTable();
             string condicion;
 
-            if (DatostextBox.TextLength == 0)
-            {
-                Error();
-            }
-            else
+            if (Error() == 0)
             {
                 if (BuscarcomboBox.SelectedIndex == 0)
                 {
@@ -44,7 +51,9 @@ namespace BillEasy0._1._0
                     }
                     else
                     {
-                        condicion = "MarcaId = " + DatostextBox.Text;
+                        int id;
+                        int.TryParse(DatostextBox.Text, out id);
+                        condicion = "MarcaId = " + id.ToString();
                     }
                     dataTable = marca.Listado(" MarcaId, Nombre", condicion, "");
                     DatosdataGridView.DataSource = dataTable;

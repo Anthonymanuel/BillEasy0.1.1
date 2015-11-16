@@ -13,9 +13,11 @@ namespace BillEasy0._1._0
 {
     public partial class RegistroCiudad : Form
     {
+        ErrorProvider miError;
         public RegistroCiudad()
         {
             InitializeComponent();
+            miError = new ErrorProvider();
         }
 
         private void LlenarDatos(Ciudades ciudad)
@@ -26,16 +28,37 @@ namespace BillEasy0._1._0
             ciudad.CodigoPostal = codigoPostal;
         }
 
-        private int Validar()
+        private int Error()
         {
-            int retorno = 0;
-            if (NombreTextBox.Text == "" || CodigoPostalTextBox.Text == "")
+            int contador = 0;
+
+            if (NombreTextBox.Text == "")
             {
-                MessageBox.Show("Complete los campos que estan vacios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                miError.SetError(NombreTextBox, "Debe llenar el nombre de la ciudad");
+                contador = 1;
             }
             else
             {
+                miError.SetError(NombreTextBox, "");
+            }
+            if (CodigoPostalTextBox.Text == "")
+            {
+                miError.SetError(CodigoPostalTextBox, "Debe llenar el codigo postal");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(CodigoPostalTextBox, "");
+            } 
+            return contador;
+        }
 
+
+
+        private int Validar()
+        {
+            int retorno = 0;
+            
                 if (!Regex.Match(CodigoPostalTextBox.Text, @"^\d{5}$").Success)
                 {
                     MessageBox.Show("Codigo postal invalido", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -47,7 +70,7 @@ namespace BillEasy0._1._0
                     NombreTextBox.Text = espacio.Replace(NombreTextBox.Text, " ");
                     retorno += 1;
                 }
-            }
+            
             return retorno;
         }
         private void Buscarbutton_Click(object sender, EventArgs e)
@@ -71,14 +94,14 @@ namespace BillEasy0._1._0
         private void ButtonGuardar_Click(object sender, EventArgs e)
         {
             Ciudades ciudad = new Ciudades();
-            if (CiudadIdtextBox.Text.Length > 0 && Validar() == 1)
+            if (CiudadIdtextBox.Text.Length > 0 && Error() == 0 && Validar() == 1)
             {
 
                 int id;
                 int.TryParse(CiudadIdtextBox.Text, out id);
                 ciudad.CiudadId = id;
                 LlenarDatos(ciudad);
-                if (ciudad.Editar())
+                if (ciudad.Editar() && Validar() == 1 && Error() == 0)
                 {
                     MessageBox.Show("Ciudad Editada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Nuevobutton.PerformClick();
@@ -88,12 +111,7 @@ namespace BillEasy0._1._0
                     MessageBox.Show("Debe de completar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            if (NombreTextBox.TextLength == 0)
-            {
-                MessageBox.Show("Debe de completar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (CiudadIdtextBox.Text.Length == 0 && Validar() == 1)
+            else if (CiudadIdtextBox.Text.Length == 0 && Error() == 0 && Validar() == 1)
             {
                 LlenarDatos(ciudad);
                 if (ciudad.Insertar())

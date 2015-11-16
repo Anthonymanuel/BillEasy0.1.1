@@ -14,14 +14,16 @@ namespace BillEasy0._1._0
 {
     public partial class RegistroProveedor : Form
     {
+        ErrorProvider miError;
         public RegistroProveedor()
         {
             InitializeComponent();
+            miError = new ErrorProvider();
         }
 
         private void LlenarDatos(Proveedores proveedor)
         {
-            //proveedor.CiudadId = Convert.ToInt32(CiudadComboBox.ValueMember);
+            proveedor.CiudadId = (int)CiudadComboBox.SelectedIndex;
             proveedor.NombreEmpresa = NombreEmpresaTextBox.Text;
             proveedor.Direccion = DireccionTextBox.Text;
             proveedor.Telefono = TelefonoTextBox.Text;
@@ -29,6 +31,76 @@ namespace BillEasy0._1._0
             proveedor.RNC = RNCTextBox.Text;
             proveedor.NombreRepresentante = NombreRepresentanteTextBox.Text;
             proveedor.Celular = CelularTextBox.Text;
+        }
+
+        private int Error()
+        {
+            int contador = 0;
+
+            if (NombreEmpresaTextBox.Text == "")
+            {
+                miError.SetError(NombreEmpresaTextBox, "Debe llenar el nombre de la empresa");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(NombreEmpresaTextBox, "");
+            }
+            if (DireccionTextBox.Text == "")
+            {
+                miError.SetError(DireccionTextBox, "Debe llenar la direccion");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(DireccionTextBox, "");
+            }
+            if (TelefonoTextBox.Text == "")
+            {
+                miError.SetError(TelefonoTextBox, "Debe llenar el numero de telefono");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(TelefonoTextBox, "");
+            }
+            if (EmailTextBox.Text == "")
+            {
+                miError.SetError(EmailTextBox, "Debe llenar el email");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(EmailTextBox, "");
+            }
+            if (RNCTextBox.Text == "")
+            {
+                miError.SetError(RNCTextBox, "Debe llenar el RNC");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(RNCTextBox, "");
+            }
+            if (NombreRepresentanteTextBox.Text == "")
+            {
+                miError.SetError(NombreRepresentanteTextBox, "Debe llenar el  nombre del representante");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(NombreRepresentanteTextBox, "");
+            }
+            if (CelularTextBox.Text == "")
+            {
+                miError.SetError(CelularTextBox, "Debe llenar el  numero de telefono");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(CelularTextBox, "");
+            }
+            return contador;
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
@@ -63,7 +135,8 @@ namespace BillEasy0._1._0
         {
             Proveedores proveedor = new Proveedores();
             LlenarDatos(proveedor);
-            proveedor.Insertar();
+            Error();
+          //  proveedor.Insertar();
 
         }
 
@@ -85,12 +158,13 @@ namespace BillEasy0._1._0
             }
         }
 
-        private void RegistroProveedor_Load(object sender, EventArgs e)
+        private void RegistroProveedor_Load_1(object sender, EventArgs e)
         {
-            Ciudades ciudad = new Ciudades();
-            CiudadComboBox.DataSource = ciudad.Listado("CiudadId,Nombre,CodigoPostal", "1=1", "");
-            CiudadComboBox.DisplayMember = string.Format("Nombre");
-            CiudadComboBox.ValueMember = "CiudadId";
+  
+              Ciudades ciudad = new Ciudades();
+              CiudadComboBox.DataSource = ciudad.Listado("CiudadId,Nombre,CodigoPostal ", "1=1", "");
+              CiudadComboBox.DisplayMember = "Nombre";
+              CiudadComboBox.ValueMember = "CiudadId";
         }
     }
 }

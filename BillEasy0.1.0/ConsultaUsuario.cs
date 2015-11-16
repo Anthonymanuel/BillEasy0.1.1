@@ -15,15 +15,31 @@ namespace BillEasy0._1._0
             BuscarcomboBox.SelectedIndex = 0;
         }
 
-     
+        public int Error( )
+        {
+            int contador = 0;
+            if (DatostextBox.TextLength == 0)
+            {
+                miError.SetError(DatostextBox, "Debe Completar el campo");
+                contador = 1;
+            }
+            else
+            {
+                miError.SetError(DatostextBox, "");
+            }
+            return contador;
+        }
+
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
             DataTable dataTable = new DataTable();
             string condicion;
 
-         
-            
+
+            if (Error() == 0)
+            {
+  
                 if (BuscarcomboBox.SelectedIndex == 0)
                 {
                     if(DatostextBox.Text.Trim().Length == 0)
@@ -32,7 +48,9 @@ namespace BillEasy0._1._0
                     }
                     else
                     {
-                        condicion = "UsuarioId = " + DatostextBox.Text;
+                    int id;
+                    int.TryParse(DatostextBox.Text, out id);
+                    condicion = "UsuarioId = " + id.ToString();
                     }
                     dataTable = usuario.Listado(" UsuarioId, Nombres, NombreUsuario, Contrasena, Area, Fecha",condicion, "");
                     DatosdataGridView.DataSource = dataTable;
@@ -65,18 +83,19 @@ namespace BillEasy0._1._0
                 dataTable = usuario.Listado(" UsuarioId, Nombres, NombreUsuario, Contrasena, Area, Fecha ", condicion, "");
                 DatosdataGridView.DataSource = dataTable;
             }
-            if(BuscarcomboBox.SelectedIndex == 3)
-            {
-                if(DatostextBox.Text.Trim().Length == 3)
+                if (BuscarcomboBox.SelectedIndex == 3)
                 {
-                    condicion = "4=4";
+                    if (DatostextBox.Text.Trim().Length == 3)
+                    {
+                        condicion = "4=4";
+                    }
+                    else
+                    {
+                        condicion = string.Format("Area = '{0}'", DatostextBox.Text);
+                    }
+                    dataTable = usuario.Listado(" UsuarioId, Nombres, NombreUsuario, Contrasena, Area, Fecha ", condicion, "");
+                    DatosdataGridView.DataSource = dataTable;
                 }
-                else
-                {
-                    condicion = string.Format("Area = '{0}'",DatostextBox.Text);
-                }
-                dataTable = usuario.Listado(" UsuarioId, Nombres, NombreUsuario, Contrasena, Area, Fecha ", condicion, "");
-                DatosdataGridView.DataSource = dataTable;
             }
 
         }

@@ -38,31 +38,51 @@ namespace BillEasy0._1._0
         private int Error()
         {
             int contador = 0;
-           
+
             if (NombreTextBox.Text == "")
             {
                 miError.SetError(NombreTextBox, "Debe llenar el nombre del producto");
                 contador = 1;
+            }
+            else
+            {
+                miError.SetError(NombreTextBox, "");
             }
             if (CantidadTextBox.Text == "")
             {
                 miError.SetError(CantidadTextBox, "Debe llenar la cantidad");
                 contador = 1;
             }
+            else
+            {
+                miError.SetError(CantidadTextBox, "");
+            }
             if (PrecioTextBox.Text == "")
             {
                 miError.SetError(PrecioTextBox, "Debe llenar el precio");
                 contador = 1;
+            }
+            else
+            {
+                miError.SetError(PrecioTextBox, "");
             }
             if (CostoTextBox.Text == "")
             {
                 miError.SetError(CostoTextBox, "Debe llenar el Costo");
                 contador = 1;
             }
+            else
+            {
+                miError.SetError(CostoTextBox, "");
+            }
             if (ITBISTextBox.Text == "")
             {
                 miError.SetError(ITBISTextBox, "Debe llenar el ITBIS");
                 contador = 1;
+            }
+            else
+            {
+                miError.SetError(ITBISTextBox, "");
             }
             return contador;
         }
@@ -153,6 +173,18 @@ namespace BillEasy0._1._0
             }
         }
 
-
+        private void RegistroProducto_Load(object sender, EventArgs e)
+        {
+            Proveedores proveedor = new Proveedores();
+            Marcas marca = new Marcas();
+            ProveedorComboBox.DataSource = proveedor.Listado("ProveedorId ,CiudadId, NombreEmpresa,Direccion,Telefono,Email,RNC,NombreRepresentante,Celular", "1=1","");
+            ProveedorComboBox.DisplayMember = "NombreEmpresa";
+            ProveedorComboBox.ValueMember = "ProveedorId";
+                
+            MarcaComboBox.DataSource = marca.Listado("MarcaId,Nombre","1=1","");
+            MarcaComboBox.DisplayMember = "Nombre";
+            MarcaComboBox.ValueMember = "MarcaId";
+             
+        }
     }
 }
