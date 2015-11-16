@@ -3,3 +3,8 @@ C:\Users\Anthony\Desktop\Nueva carpeta\DAL\bin\Debug\DAL.pdb
 C:\Users\Anthony\Desktop\Nueva carpeta\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\Anthony\Desktop\Nueva carpeta\DAL\obj\Debug\DAL.dll
 C:\Users\Anthony\Desktop\Nueva carpeta\DAL\obj\Debug\DAL.pdb
+C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\DAL\bin\Debug\DAL.dll
+C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\DAL\bin\Debug\DAL.pdb
+C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\DAL\obj\Debug\DAL.dll
+C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\DAL\obj\Debug\DAL.pdb
