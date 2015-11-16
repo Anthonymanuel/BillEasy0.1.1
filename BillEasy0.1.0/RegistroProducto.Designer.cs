@@ -127,7 +127,7 @@
             // 
             this.GuardarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(425, 182);
+            this.GuardarButton.Location = new System.Drawing.Point(425, 168);
             this.GuardarButton.MaximumSize = new System.Drawing.Size(81, 44);
             this.GuardarButton.MinimumSize = new System.Drawing.Size(81, 44);
             this.GuardarButton.Name = "GuardarButton";
@@ -142,9 +142,9 @@
             // 
             this.EliminarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976510_Delete;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(518, 182);
+            this.EliminarButton.Location = new System.Drawing.Point(518, 168);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(79, 47);
+            this.EliminarButton.Size = new System.Drawing.Size(79, 44);
             this.EliminarButton.TabIndex = 70;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -155,9 +155,9 @@
             // 
             this.Nuevobutton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(340, 182);
+            this.Nuevobutton.Location = new System.Drawing.Point(340, 168);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(79, 47);
+            this.Nuevobutton.Size = new System.Drawing.Size(79, 44);
             this.Nuevobutton.TabIndex = 68;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -286,6 +286,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de productos";
             this.Load += new System.EventHandler(this.RegistroProducto_Load);
             this.groupBox1.ResumeLayout(false);

@@ -304,6 +304,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroProveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de proveedores";
             this.Load += new System.EventHandler(this.RegistroProveedor_Load_1);
             this.groupBox1.ResumeLayout(false);
