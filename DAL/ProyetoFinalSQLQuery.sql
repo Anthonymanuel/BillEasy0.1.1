@@ -13,7 +13,7 @@ Direccion Varchar(150),
 Email Varchar(100),
 Cedula Varchar(13)
 )
-
+Select Count(Nombre) from Ciudades
 select *from Clientes
 drop table Clientes
 

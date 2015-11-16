@@ -58,7 +58,7 @@
             // 
             this.ButtonGuardar.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
             this.ButtonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonGuardar.Location = new System.Drawing.Point(407, 64);
+            this.ButtonGuardar.Location = new System.Drawing.Point(143, 103);
             this.ButtonGuardar.MaximumSize = new System.Drawing.Size(81, 44);
             this.ButtonGuardar.MinimumSize = new System.Drawing.Size(81, 44);
             this.ButtonGuardar.Name = "ButtonGuardar";
@@ -73,7 +73,7 @@
             // 
             this.EliminarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976510_Delete;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(503, 64);
+            this.EliminarButton.Location = new System.Drawing.Point(239, 103);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(81, 44);
             this.EliminarButton.TabIndex = 29;
@@ -86,7 +86,7 @@
             // 
             this.Nuevobutton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(310, 64);
+            this.Nuevobutton.Location = new System.Drawing.Point(46, 103);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
             this.Nuevobutton.TabIndex = 28;
@@ -139,7 +139,7 @@
             this.groupBox1.Controls.Add(this.NombreTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 70);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(593, 118);
+            this.groupBox1.Size = new System.Drawing.Size(371, 153);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Marcas";
@@ -148,7 +148,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Monotype Corsiva", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(197, 21);
+            this.label10.Location = new System.Drawing.Point(83, 21);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(223, 36);
             this.label10.TabIndex = 33;
@@ -158,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 203);
+            this.ClientSize = new System.Drawing.Size(395, 235);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroMarca";

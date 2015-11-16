@@ -137,6 +137,7 @@ namespace BillEasy0._1._0
             return id;
         }
 
+       
         private void ButtonGuardar_Click(object sender, EventArgs e)
         {
             Proveedores proveedor = new Proveedores();
@@ -147,6 +148,7 @@ namespace BillEasy0._1._0
                 if (proveedor.Insertar() && Error() == 0)
                 {
                     MessageBox.Show("Proveedor insertado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Grafico();
                     Nuevobutton.PerformClick();
                 }
                 else

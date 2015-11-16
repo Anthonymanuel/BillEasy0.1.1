@@ -45,21 +45,21 @@
             // 
             // CodigoPostalTextBox
             // 
-            this.CodigoPostalTextBox.Location = new System.Drawing.Point(113, 112);
+            this.CodigoPostalTextBox.Location = new System.Drawing.Point(87, 109);
             this.CodigoPostalTextBox.Name = "CodigoPostalTextBox";
             this.CodigoPostalTextBox.Size = new System.Drawing.Size(191, 20);
             this.CodigoPostalTextBox.TabIndex = 24;
             // 
             // NombreTextBox
             // 
-            this.NombreTextBox.Location = new System.Drawing.Point(113, 73);
+            this.NombreTextBox.Location = new System.Drawing.Point(87, 73);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(191, 20);
             this.NombreTextBox.TabIndex = 23;
             // 
             // CiudadIdtextBox
             // 
-            this.CiudadIdtextBox.Location = new System.Drawing.Point(113, 37);
+            this.CiudadIdtextBox.Location = new System.Drawing.Point(87, 37);
             this.CiudadIdtextBox.Name = "CiudadIdtextBox";
             this.CiudadIdtextBox.Size = new System.Drawing.Size(111, 20);
             this.CiudadIdtextBox.TabIndex = 22;
@@ -87,15 +87,15 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Ciudadd:";
+            this.label1.Text = "CiudaId:";
             // 
             // Buscarbutton
             // 
             this.Buscarbutton.Image = global::BillEasy0._1._0.Properties.Resources._1443839488_file_search;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(230, 25);
+            this.Buscarbutton.Location = new System.Drawing.Point(204, 25);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(74, 42);
             this.Buscarbutton.TabIndex = 31;
@@ -107,18 +107,15 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.ButtonGuardar);
             this.groupBox1.Controls.Add(this.Buscarbutton);
-            this.groupBox1.Controls.Add(this.EliminarButton);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.Nuevobutton);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.CiudadIdtextBox);
             this.groupBox1.Controls.Add(this.NombreTextBox);
             this.groupBox1.Controls.Add(this.CodigoPostalTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 68);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(592, 150);
+            this.groupBox1.Size = new System.Drawing.Size(320, 150);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Ciudades";
@@ -127,7 +124,7 @@
             // 
             this.ButtonGuardar.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
             this.ButtonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonGuardar.Location = new System.Drawing.Point(408, 96);
+            this.ButtonGuardar.Location = new System.Drawing.Point(134, 253);
             this.ButtonGuardar.MaximumSize = new System.Drawing.Size(81, 44);
             this.ButtonGuardar.MinimumSize = new System.Drawing.Size(81, 44);
             this.ButtonGuardar.Name = "ButtonGuardar";
@@ -142,7 +139,7 @@
             // 
             this.EliminarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976510_Delete;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(505, 96);
+            this.EliminarButton.Location = new System.Drawing.Point(231, 253);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(81, 44);
             this.EliminarButton.TabIndex = 29;
@@ -155,7 +152,7 @@
             // 
             this.Nuevobutton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(310, 96);
+            this.Nuevobutton.Location = new System.Drawing.Point(32, 253);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
             this.Nuevobutton.TabIndex = 28;
@@ -168,7 +165,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Monotype Corsiva", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(184, 20);
+            this.label10.Location = new System.Drawing.Point(50, 18);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(242, 36);
             this.label10.TabIndex = 33;
@@ -178,9 +175,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 230);
+            this.ClientSize = new System.Drawing.Size(345, 309);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.ButtonGuardar);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.EliminarButton);
+            this.Controls.Add(this.Nuevobutton);
             this.Name = "RegistroCiudad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de ciudades";
