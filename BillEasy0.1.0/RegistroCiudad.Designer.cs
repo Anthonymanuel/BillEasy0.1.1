@@ -36,10 +36,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.EliminarButton = new System.Windows.Forms.Button();
             this.ButtonGuardar = new System.Windows.Forms.Button();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,10 +118,51 @@
             this.groupBox1.Controls.Add(this.CodigoPostalTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 68);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(592, 160);
+            this.groupBox1.Size = new System.Drawing.Size(592, 150);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Ciudades";
+            // 
+            // ButtonGuardar
+            // 
+            this.ButtonGuardar.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
+            this.ButtonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ButtonGuardar.Location = new System.Drawing.Point(408, 96);
+            this.ButtonGuardar.MaximumSize = new System.Drawing.Size(81, 44);
+            this.ButtonGuardar.MinimumSize = new System.Drawing.Size(81, 44);
+            this.ButtonGuardar.Name = "ButtonGuardar";
+            this.ButtonGuardar.Size = new System.Drawing.Size(81, 44);
+            this.ButtonGuardar.TabIndex = 30;
+            this.ButtonGuardar.Text = "Guardar";
+            this.ButtonGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ButtonGuardar.UseVisualStyleBackColor = true;
+            this.ButtonGuardar.Click += new System.EventHandler(this.ButtonGuardar_Click);
+            // 
+            // EliminarButton
+            // 
+            this.EliminarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976510_Delete;
+            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarButton.Location = new System.Drawing.Point(505, 96);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(81, 44);
+            this.EliminarButton.TabIndex = 29;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevobutton.Location = new System.Drawing.Point(310, 96);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
+            this.Nuevobutton.TabIndex = 28;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // label10
             // 
@@ -133,55 +174,15 @@
             this.label10.TabIndex = 33;
             this.label10.Text = "Registro de ciudades";
             // 
-            // Nuevobutton
-            // 
-            this.Nuevobutton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
-            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(310, 110);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
-            this.Nuevobutton.TabIndex = 28;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
-            // 
-            // EliminarButton
-            // 
-            this.EliminarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976510_Delete;
-            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(503, 112);
-            this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(81, 44);
-            this.EliminarButton.TabIndex = 29;
-            this.EliminarButton.Text = "Eliminar";
-            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EliminarButton.UseVisualStyleBackColor = true;
-            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
-            // 
-            // ButtonGuardar
-            // 
-            this.ButtonGuardar.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
-            this.ButtonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonGuardar.Location = new System.Drawing.Point(406, 112);
-            this.ButtonGuardar.MaximumSize = new System.Drawing.Size(81, 44);
-            this.ButtonGuardar.MinimumSize = new System.Drawing.Size(81, 44);
-            this.ButtonGuardar.Name = "ButtonGuardar";
-            this.ButtonGuardar.Size = new System.Drawing.Size(81, 44);
-            this.ButtonGuardar.TabIndex = 30;
-            this.ButtonGuardar.Text = "Guardar";
-            this.ButtonGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonGuardar.UseVisualStyleBackColor = true;
-            this.ButtonGuardar.Click += new System.EventHandler(this.ButtonGuardar_Click);
-            // 
             // RegistroCiudad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 240);
+            this.ClientSize = new System.Drawing.Size(616, 230);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroCiudad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de ciudades";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
