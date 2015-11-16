@@ -27,8 +27,8 @@ namespace BillEasy0._1._0
             float.TryParse(CostoTextBox.Text, out costo);
             float.TryParse(ITBISTextBox.Text, out itbis);
             int.TryParse(CantidadTextBox.Text, out cantidad);
-            //producto.ProveedorId = ProveedorTextBox.Text;
-            //producto.MarcaId = MarcaTextBox.Text;
+            producto.ProveedorId = (int)ProveedorComboBox.SelectedValue;
+            producto.MarcaId = (int)MarcaComboBox.SelectedValue;
             producto.Nombre = NombreTextBox.Text;
             producto.Cantidad = cantidad;
             producto.Precio = precio;
@@ -130,8 +130,6 @@ namespace BillEasy0._1._0
             int.TryParse(ProductoIdTextBox.Text, out id);
             producto.Buscar(id);
             ProductoIdTextBox.Text = producto.ProductoId.ToString();
-            //ProveedorTextBox.Text = producto.ProveedorId.ToString();
-            //MarcaTextBox.Text = producto.MarcaId.ToString();
             NombreTextBox.Text = producto.Nombre.ToString();
             CantidadTextBox.Text = producto.Cantidad.ToString();
             PrecioTextBox.Text = producto.Precio.ToString();
@@ -148,11 +146,43 @@ namespace BillEasy0._1._0
             CostoTextBox.Clear();
             ITBISTextBox.Clear();
         }
+        public int Convertidor()
+        {
+            int id;
+            int.TryParse(ProductoIdTextBox.Text, out id);
+            return id;
+        }
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            Error();
-            Validar();
+            Productos productos = new Productos();
+            if(ProductoIdTextBox.TextLength == 0)
+            {
+                LLenarDatos(productos);
+                if (productos.Insertar() && Error() == 0)
+                {
+                    MessageBox.Show("Producto insertado","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    Nuevobutton.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Error la insertar","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                LLenarDatos(productos);
+                productos.ProductoId = Convertidor();
+                if(productos.Editar())
+                {
+                    MessageBox.Show("Producto editado","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    Nuevobutton.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Error al editar","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)

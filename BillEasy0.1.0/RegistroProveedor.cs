@@ -23,7 +23,7 @@ namespace BillEasy0._1._0
 
         private void LlenarDatos(Proveedores proveedor)
         {
-            proveedor.CiudadId = (int)CiudadComboBox.SelectedIndex;
+            proveedor.CiudadId = (int)CiudadComboBox.SelectedValue;
             proveedor.NombreEmpresa = NombreEmpresaTextBox.Text;
             proveedor.Direccion = DireccionTextBox.Text;
             proveedor.Telefono = TelefonoTextBox.Text;
@@ -130,13 +130,45 @@ namespace BillEasy0._1._0
             NombreRepresentanteTextBox.Clear();
             CelularTextBox.Clear();
         }
+        public int Convertidor()
+        {
+            int id;
+            int.TryParse(ProveedorIdTextBox.Text, out id);
+            return id;
+        }
 
         private void ButtonGuardar_Click(object sender, EventArgs e)
         {
             Proveedores proveedor = new Proveedores();
-            LlenarDatos(proveedor);
-            Error();
-          //  proveedor.Insertar();
+           
+            if(ProveedorIdTextBox.TextLength == 0)
+            {
+                LlenarDatos(proveedor);
+                if (proveedor.Insertar() && Error() == 0)
+                {
+                    MessageBox.Show("Proveedor insertado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Nuevobutton.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Error al insertar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                proveedor.ProveedorId = Convertidor();
+                LlenarDatos(proveedor);
+                if (proveedor.Editar())
+                {
+                    MessageBox.Show("Proveedor editado","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    Nuevobutton.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Erro al editar","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }
+            
 
         }
 

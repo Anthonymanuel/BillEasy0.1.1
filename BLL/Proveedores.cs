@@ -60,7 +60,7 @@ namespace BLL
         {
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
-            retorno = conexion.Ejecutar(String.Format("Update Proveedores Set CiudadId = {0},NombreEmpresa ='{1}', Direccion ='{2}', Telefono ='{3}', Email ='{4}', RNC='{5}', NombreRepresentante = '{6}', Celular ='{7}' Where ProveedorId ={7}", this.CiudadId, this.NombreEmpresa, this.Direccion, this.Telefono, this.Email, this.RNC, this.NombreRepresentante, this.Celular, this.ProveedorId));
+            retorno = conexion.Ejecutar(String.Format("Update Proveedores Set CiudadId = {0},NombreEmpresa ='{1}', Direccion ='{2}', Telefono ='{3}', Email ='{4}', RNC='{5}', NombreRepresentante = '{6}', Celular ='{7}' Where ProveedorId ={8}", this.CiudadId, this.NombreEmpresa, this.Direccion, this.Telefono, this.Email, this.RNC, this.NombreRepresentante, this.Celular, this.ProveedorId));
             return retorno;
         }
 

@@ -81,7 +81,7 @@ namespace BLL
         {
             bool retorno;
             ConexionDb conexion = new ConexionDb();
-            retorno = conexion.Ejecutar(String.Format("Insert Into Productos(ProveedorId,MarcaId,Nombre,Cantidad,Precio,Costo,ITBIS) Values({0},'{1}',{2},{3},{4},{5},{6}) ", this.ProveedorId, this.MarcaId, this.Nombre, this.Cantidad, this.Precio, this.Costo, this.ITBIS, this.ProductoId));
+            retorno = conexion.Ejecutar(String.Format("Insert Into Productos(ProveedorId,MarcaId,Nombre,Cantidad,Precio,Costo,ITBIS) Values({0},{1},'{2}',{3},{4},{5},{6}) ", this.ProveedorId, this.MarcaId, this.Nombre, this.Cantidad, this.Precio, this.Costo, this.ITBIS, this.ProductoId));
             return retorno;
         }
 

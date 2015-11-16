@@ -272,7 +272,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Monotype Corsiva", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(129, 24);
+            this.label10.Location = new System.Drawing.Point(204, 20);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(259, 36);
             this.label10.TabIndex = 83;
