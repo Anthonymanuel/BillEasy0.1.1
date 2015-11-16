@@ -25,3 +25,6 @@ C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.R
 C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroProveedor.resources
 C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaProducto.resources
 C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaProveedores.resources
+C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\BillEasy0.1.0.exe.config
+C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.exe
+C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.pdb

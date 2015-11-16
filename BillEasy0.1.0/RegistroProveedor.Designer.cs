@@ -136,7 +136,7 @@
             // 
             this.ButtonGuardar.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
             this.ButtonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonGuardar.Location = new System.Drawing.Point(425, 181);
+            this.ButtonGuardar.Location = new System.Drawing.Point(474, 181);
             this.ButtonGuardar.MaximumSize = new System.Drawing.Size(81, 44);
             this.ButtonGuardar.MinimumSize = new System.Drawing.Size(81, 44);
             this.ButtonGuardar.Name = "ButtonGuardar";
@@ -151,7 +151,7 @@
             // 
             this.EliminarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976510_Delete;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(521, 180);
+            this.EliminarButton.Location = new System.Drawing.Point(570, 180);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(79, 47);
             this.EliminarButton.TabIndex = 47;
@@ -164,7 +164,7 @@
             // 
             this.Nuevobutton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(331, 180);
+            this.Nuevobutton.Location = new System.Drawing.Point(380, 180);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(79, 47);
             this.Nuevobutton.TabIndex = 45;
@@ -259,7 +259,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Monotype Corsiva", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(140, 43);
+            this.label10.Location = new System.Drawing.Point(214, 26);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(281, 36);
             this.label10.TabIndex = 58;
