@@ -133,6 +133,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroVentas.Designer.cs">
+      <DependentUpon>RegistroVentas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BillEasy.resx">
       <DependentUpon>BillEasy.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroUsuario.resx">
       <DependentUpon>RegistroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroVentas.resx">
+      <DependentUpon>RegistroVentas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
