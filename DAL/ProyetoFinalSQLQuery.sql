@@ -38,9 +38,10 @@ ITBIS Float,
 Descuentos Float,
 TipoVentas Varchar(9),
 NFC Varchar(20),
-TipoDeComprovanteFiscal Varchar(20),
+TipoNFC Varchar(20),
 Total Float
 )
+drop Table Ventas
 
 Create Table Compras(
 CompraId Int Identity Primary Key,
@@ -82,6 +83,7 @@ Celular Varchar(12)
 Create Table DetallesVentas(
 VentaId Int References Ventas(VentaId),
 UsuarioId Int References Usuarios(UsuarioId),
+ClienteId int references Clientes(ClienteId),
 Cantidad Int,
 Precio Float
 )

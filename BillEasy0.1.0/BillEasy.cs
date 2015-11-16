@@ -111,5 +111,10 @@ namespace BillEasy0._1._0
             proveedor.MdiParent = this;
             proveedor.Show();
         }
+
+        private void BillEasy_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

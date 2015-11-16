@@ -26,6 +26,11 @@ namespace BLL
             this.Area = "";
             this.Fecha = "";
         }
+        public Usuarios(int usuarioId,string nombre)
+        {
+            this.UsuarioId = usuarioId;
+            this.Nombre = nombre;
+        }
         public Usuarios(int usuarioId, string nombre, string nombreUsuario, string contrasena, string area, string fecha)
         {
             this.UsuarioId = usuarioId;
