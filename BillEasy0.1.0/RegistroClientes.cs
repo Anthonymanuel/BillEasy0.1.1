@@ -209,10 +209,10 @@ namespace BillEasy0._1._0
 
             DataTable table = new DataTable();
             Clientes clientes = new Clientes();
-            table = clientes.Listado("Nombres,MAX(ClienteId) as Cantidad", "1=1 group By Nombres", "");
-            chart.Series.Add("Direccion");
-            chart.Series["Direccion"].XValueMember = "Nombres";
-            chart.Series["Direccion"].YValueMembers = "Cantidad";
+            table = clientes.Listado("CiudadId, count(*) as ClienteId", "1=1 group by CiudadId", "");
+            chart.Series.Add("Clientes");
+            chart.Series["Clientes"].XValueMember = "CiudadId";
+            chart.Series["Clientes"].YValueMembers = "ClienteId";
             chart.DataSource = table;
             chart.DataBind();
         }

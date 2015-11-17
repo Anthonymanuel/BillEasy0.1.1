@@ -103,7 +103,7 @@ namespace BLL
             string ordenFinal = "";
             if (!orden.Equals(""))
                 ordenFinal = " Orden by  " + orden;
-            return conexion.ObtenerDatos("Select " + campos + " from Clientes cl inner join Ciudades c on cl.CiudadId = c.CiudadId where " + condicion + "" + ordenFinal);
+            return conexion.ObtenerDatos("Select " + campos + " from Clientes where " + condicion + "" + ordenFinal);
 
         }
     }
