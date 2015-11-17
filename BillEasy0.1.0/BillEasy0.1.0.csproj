@@ -89,6 +89,11 @@
     <Compile Include="ConsultaUsuario.Designer.cs">
       <DependentUpon>ConsultaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegistroCiudad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,14 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="RegistroCiudad.resx">
       <DependentUpon>RegistroCiudad.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +236,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo Melvin BillEasy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1447804541_Client_Male_Light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1447804649_people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1447807658_Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1447807738_Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-carrito-compras.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

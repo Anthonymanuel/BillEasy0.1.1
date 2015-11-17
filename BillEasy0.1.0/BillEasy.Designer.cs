@@ -84,7 +84,6 @@
             this.clienteToolStripMenuItem,
             this.productosToolStripMenuItem,
             this.proveedoresToolStripMenuItem});
-            this.nuevoToolStripMenuItem.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
@@ -188,7 +187,6 @@
             // 
             // salirToolStripMenuItem
             // 
-            this.salirToolStripMenuItem.Image = global::BillEasy0._1._0.Properties.Resources._1445976510_Delete;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
@@ -204,7 +202,8 @@
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Text = "Ventas";
+            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 

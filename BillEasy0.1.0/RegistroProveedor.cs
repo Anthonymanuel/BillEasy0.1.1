@@ -148,7 +148,6 @@ namespace BillEasy0._1._0
                 if (proveedor.Insertar() && Error() == 0)
                 {
                     MessageBox.Show("Proveedor insertado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Grafico();
                     Nuevobutton.PerformClick();
                 }
                 else

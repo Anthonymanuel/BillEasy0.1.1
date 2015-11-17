@@ -116,5 +116,12 @@ namespace BillEasy0._1._0
         {
            
         }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroVentas registroVenta = new RegistroVentas();
+            registroVenta.MdiParent = this;
+            registroVenta.Show();
+        }
     }
 }

@@ -84,9 +84,11 @@ Create Table DetallesVentas(
 VentaId Int References Ventas(VentaId),
 UsuarioId Int References Usuarios(UsuarioId),
 ClienteId int references Clientes(ClienteId),
+ProductoId int references Productos(ProductoId),
 Cantidad Int,
 Precio Float
 )
+drop table DetallesVentas
 
 Create Table DetallesCompras(
 CompraId Int Identity Primary Key,

@@ -120,8 +120,16 @@ namespace BillEasy0._1._0
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+            DataTable table = new DataTable();
             Clientes clientes = new Clientes();
-            if(ClienteIdtextBox.TextLength == 0)
+            table = clientes.Listado("Nombres,MAX(ClienteId) as Cantidad","1=1 group By Nombres", "");
+            chart.Series.Add("Direccion");
+            chart.Series["Direccion"].XValueMember = "Nombres";
+            chart.Series["Direccion"].YValueMembers = "Cantidad";
+            chart.DataSource = table;
+            chart.DataBind();
+
+            if (ClienteIdtextBox.TextLength == 0)
             {
                 Datos(clientes);
                 if (Error() == 0 && clientes.Insertar())
@@ -198,6 +206,15 @@ namespace BillEasy0._1._0
             CiudadcomboBox.DataSource = ciudades.Listado("CiudadId,Nombre,CodigoPostal ","1=1","");
             CiudadcomboBox.DisplayMember = string.Format("Nombre");
             CiudadcomboBox.ValueMember = "CiudadId";
+
+            DataTable table = new DataTable();
+            Clientes clientes = new Clientes();
+            table = clientes.Listado("Nombres,MAX(ClienteId) as Cantidad", "1=1 group By Nombres", "");
+            chart.Series.Add("Direccion");
+            chart.Series["Direccion"].XValueMember = "Nombres";
+            chart.Series["Direccion"].YValueMembers = "Cantidad";
+            chart.DataSource = table;
+            chart.DataBind();
         }
 
         

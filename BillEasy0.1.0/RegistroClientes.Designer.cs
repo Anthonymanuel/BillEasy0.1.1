@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,7 +54,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.CiudadcomboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.DatosgroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -297,11 +301,24 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "Registro de clientes";
             // 
+            // chart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
+            this.chart.Location = new System.Drawing.Point(571, 24);
+            this.chart.Name = "chart";
+            this.chart.Size = new System.Drawing.Size(300, 300);
+            this.chart.TabIndex = 22;
+            this.chart.Text = "chart1";
+            // 
             // RegistroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 336);
+            this.ClientSize = new System.Drawing.Size(870, 336);
+            this.Controls.Add(this.chart);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.DatosgroupBox);
             this.MaximizeBox = false;
@@ -312,6 +329,7 @@
             this.Load += new System.EventHandler(this.RegistroClientes_Load);
             this.DatosgroupBox.ResumeLayout(false);
             this.DatosgroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,5 +361,6 @@
         private System.Windows.Forms.ComboBox CiudadcomboBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox CedulamaskedTextBox;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart;
     }
 }
