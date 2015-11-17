@@ -123,11 +123,11 @@ namespace BillEasy0._1._0
             DataTable table = new DataTable();
             Clientes clientes = new Clientes();
             table = clientes.Listado("Nombres,MAX(ClienteId) as Cantidad","1=1 group By Nombres", "");
-            chart.Series.Add("Direccion");
-            chart.Series["Direccion"].XValueMember = "Nombres";
-            chart.Series["Direccion"].YValueMembers = "Cantidad";
-            chart.DataSource = table;
-            chart.DataBind();
+            Clienteschart.Series.Add("Direccion");
+            Clienteschart.Series["Direccion"].XValueMember = "Nombres";
+            Clienteschart.Series["Direccion"].YValueMembers = "Cantidad";
+            Clienteschart.DataSource = table;
+            Clienteschart.DataBind();
 
             if (ClienteIdtextBox.TextLength == 0)
             {
@@ -210,11 +210,11 @@ namespace BillEasy0._1._0
             DataTable table = new DataTable();
             Clientes clientes = new Clientes();
             table = clientes.Listado("CiudadId, count(*) as ClienteId", "1=1 group by CiudadId", "");
-            chart.Series.Add("Clientes");
-            chart.Series["Clientes"].XValueMember = "CiudadId";
-            chart.Series["Clientes"].YValueMembers = "ClienteId";
-            chart.DataSource = table;
-            chart.DataBind();
+            Clienteschart.Series.Add("Clientes");
+            Clienteschart.Series["Clientes"].XValueMember = "CiudadId";
+            Clienteschart.Series["Clientes"].YValueMembers = "ClienteId";
+            Clienteschart.DataSource = table;
+            Clienteschart.DataBind();
         }
 
         
