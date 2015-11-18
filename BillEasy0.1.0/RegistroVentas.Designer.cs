@@ -54,12 +54,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.Agregarbutton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.TotaltextBox = new System.Windows.Forms.TextBox();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
+            this.ProductoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITBIS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.ITBIStextBox = new System.Windows.Forms.TextBox();
+            this.NombretextBox = new System.Windows.Forms.TextBox();
+            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Agregarbutton = new System.Windows.Forms.Button();
             this.DatosVentasgroupBox.SuspendLayout();
             this.ProductogroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VentasdataGridView)).BeginInit();
@@ -84,7 +94,7 @@
             this.DatosVentasgroupBox.Controls.Add(this.label1);
             this.DatosVentasgroupBox.Location = new System.Drawing.Point(12, 78);
             this.DatosVentasgroupBox.Name = "DatosVentasgroupBox";
-            this.DatosVentasgroupBox.Size = new System.Drawing.Size(690, 344);
+            this.DatosVentasgroupBox.Size = new System.Drawing.Size(720, 344);
             this.DatosVentasgroupBox.TabIndex = 0;
             this.DatosVentasgroupBox.TabStop = false;
             this.DatosVentasgroupBox.Text = "Datos Ventas";
@@ -101,6 +111,10 @@
             // ProductogroupBox
             // 
             this.ProductogroupBox.Controls.Add(this.Agregarbutton);
+            this.ProductogroupBox.Controls.Add(this.NombretextBox);
+            this.ProductogroupBox.Controls.Add(this.ITBIStextBox);
+            this.ProductogroupBox.Controls.Add(this.label14);
+            this.ProductogroupBox.Controls.Add(this.label13);
             this.ProductogroupBox.Controls.Add(this.BuscarProductobutton);
             this.ProductogroupBox.Controls.Add(this.ProductoIdtextBox);
             this.ProductogroupBox.Controls.Add(this.PreciotextBox);
@@ -112,7 +126,7 @@
             this.ProductogroupBox.Controls.Add(this.CantidadtextBox);
             this.ProductogroupBox.Location = new System.Drawing.Point(9, 96);
             this.ProductogroupBox.Name = "ProductogroupBox";
-            this.ProductogroupBox.Size = new System.Drawing.Size(671, 100);
+            this.ProductogroupBox.Size = new System.Drawing.Size(705, 100);
             this.ProductogroupBox.TabIndex = 21;
             this.ProductogroupBox.TabStop = false;
             // 
@@ -124,6 +138,7 @@
             this.BuscarProductobutton.Size = new System.Drawing.Size(46, 31);
             this.BuscarProductobutton.TabIndex = 15;
             this.BuscarProductobutton.UseVisualStyleBackColor = true;
+            this.BuscarProductobutton.Click += new System.EventHandler(this.BuscarProductobutton_Click);
             // 
             // ProductoIdtextBox
             // 
@@ -134,15 +149,16 @@
             // 
             // PreciotextBox
             // 
-            this.PreciotextBox.Location = new System.Drawing.Point(294, 53);
+            this.PreciotextBox.Location = new System.Drawing.Point(281, 54);
             this.PreciotextBox.Name = "PreciotextBox";
+            this.PreciotextBox.ReadOnly = true;
             this.PreciotextBox.Size = new System.Drawing.Size(143, 20);
             this.PreciotextBox.TabIndex = 14;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(226, 56);
+            this.label9.Location = new System.Drawing.Point(223, 56);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 8;
@@ -151,7 +167,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 56);
+            this.label7.Location = new System.Drawing.Point(223, 29);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 6;
@@ -169,7 +185,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(226, 29);
+            this.label3.Location = new System.Drawing.Point(440, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 2;
@@ -177,14 +193,14 @@
             // 
             // DescuentostextBox
             // 
-            this.DescuentostextBox.Location = new System.Drawing.Point(294, 26);
+            this.DescuentostextBox.Location = new System.Drawing.Point(508, 54);
             this.DescuentostextBox.Name = "DescuentostextBox";
             this.DescuentostextBox.Size = new System.Drawing.Size(143, 20);
             this.DescuentostextBox.TabIndex = 9;
             // 
             // CantidadtextBox
             // 
-            this.CantidadtextBox.Location = new System.Drawing.Point(74, 53);
+            this.CantidadtextBox.Location = new System.Drawing.Point(281, 26);
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(143, 20);
             this.CantidadtextBox.TabIndex = 13;
@@ -209,10 +225,20 @@
             // 
             // VentasdataGridView
             // 
+            this.VentasdataGridView.AllowUserToAddRows = false;
+            this.VentasdataGridView.AllowUserToDeleteRows = false;
             this.VentasdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.VentasdataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductoId,
+            this.Nombre,
+            this.Cantidad,
+            this.Precio,
+            this.ITBIS,
+            this.Descuento});
             this.VentasdataGridView.Location = new System.Drawing.Point(9, 202);
             this.VentasdataGridView.Name = "VentasdataGridView";
-            this.VentasdataGridView.Size = new System.Drawing.Size(671, 134);
+            this.VentasdataGridView.ReadOnly = true;
+            this.VentasdataGridView.Size = new System.Drawing.Size(705, 134);
             this.VentasdataGridView.TabIndex = 18;
             // 
             // ClientecomboBox
@@ -307,15 +333,6 @@
             this.label11.TabIndex = 1;
             this.label11.Text = "Ventas";
             // 
-            // Agregarbutton
-            // 
-            this.Agregarbutton.Location = new System.Drawing.Point(455, 24);
-            this.Agregarbutton.Name = "Agregarbutton";
-            this.Agregarbutton.Size = new System.Drawing.Size(75, 23);
-            this.Agregarbutton.TabIndex = 2;
-            this.Agregarbutton.Text = ">>";
-            this.Agregarbutton.UseVisualStyleBackColor = true;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -336,7 +353,7 @@
             // 
             this.Nuevobutton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(407, 435);
+            this.Nuevobutton.Location = new System.Drawing.Point(447, 435);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(81, 46);
             this.Nuevobutton.TabIndex = 18;
@@ -349,32 +366,113 @@
             // 
             this.Guardarbutton.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(512, 435);
+            this.Guardarbutton.Location = new System.Drawing.Point(552, 435);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(81, 46);
             this.Guardarbutton.TabIndex = 19;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // EliminarButton
             // 
             this.EliminarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976510_Delete;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(611, 435);
+            this.EliminarButton.Location = new System.Drawing.Point(651, 435);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(81, 46);
             this.EliminarButton.TabIndex = 20;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // ProductoId
+            // 
+            this.ProductoId.HeaderText = "ProductoId";
+            this.ProductoId.Name = "ProductoId";
+            this.ProductoId.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // ITBIS
+            // 
+            this.ITBIS.HeaderText = "ITBIS";
+            this.ITBIS.Name = "ITBIS";
+            this.ITBIS.ReadOnly = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(440, 29);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "ITBIS:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 57);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 13);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Nombre:";
+            // 
+            // ITBIStextBox
+            // 
+            this.ITBIStextBox.Location = new System.Drawing.Point(508, 26);
+            this.ITBIStextBox.Name = "ITBIStextBox";
+            this.ITBIStextBox.ReadOnly = true;
+            this.ITBIStextBox.Size = new System.Drawing.Size(143, 20);
+            this.ITBIStextBox.TabIndex = 18;
+            // 
+            // NombretextBox
+            // 
+            this.NombretextBox.Location = new System.Drawing.Point(74, 54);
+            this.NombretextBox.Name = "NombretextBox";
+            this.NombretextBox.ReadOnly = true;
+            this.NombretextBox.Size = new System.Drawing.Size(143, 20);
+            this.NombretextBox.TabIndex = 19;
+            // 
+            // Descuento
+            // 
+            this.Descuento.HeaderText = "Descuento";
+            this.Descuento.Name = "Descuento";
+            this.Descuento.ReadOnly = true;
+            // 
+            // Agregarbutton
+            // 
+            this.Agregarbutton.Location = new System.Drawing.Point(657, 21);
+            this.Agregarbutton.Name = "Agregarbutton";
+            this.Agregarbutton.Size = new System.Drawing.Size(42, 30);
+            this.Agregarbutton.TabIndex = 21;
+            this.Agregarbutton.Text = ">>";
+            this.Agregarbutton.UseVisualStyleBackColor = true;
             // 
             // RegistroVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(714, 493);
+            this.ClientSize = new System.Drawing.Size(744, 493);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
@@ -386,6 +484,7 @@
             this.Name = "RegistroVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de ventas";
+            this.Load += new System.EventHandler(this.RegistroVentas_Load);
             this.DatosVentasgroupBox.ResumeLayout(false);
             this.DatosVentasgroupBox.PerformLayout();
             this.ProductogroupBox.ResumeLayout(false);
@@ -424,11 +523,21 @@
         private System.Windows.Forms.Button BuscarProductobutton;
         private System.Windows.Forms.Button BuscarVentabutton;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button Agregarbutton;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox TotaltextBox;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductoId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITBIS;
+        private System.Windows.Forms.TextBox NombretextBox;
+        private System.Windows.Forms.TextBox ITBIStextBox;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
+        private System.Windows.Forms.Button Agregarbutton;
     }
 }

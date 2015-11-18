@@ -196,5 +196,10 @@ namespace BillEasy0._1._0
                 return;
             }
         }
+
+        private void RegistroUsuario_Load(object sender, EventArgs e)
+        {
+
         }
+    }
 }

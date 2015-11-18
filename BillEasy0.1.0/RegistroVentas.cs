@@ -29,5 +29,77 @@ namespace BillEasy0._1._0
             DescuentostextBox.Clear();
             TotaltextBox.Clear();
         }
+
+        private void RegistroVentas_Load(object sender, EventArgs e)
+        {
+            Clientes cliente = new Clientes();
+            Usuarios usuario = new Usuarios();
+            ClientecomboBox.DataSource = cliente.Listado("*", "1=1", "");
+            ClientecomboBox.DisplayMember = "Nombres";
+            ClientecomboBox.ValueMember = "ClienteId";
+            
+        }
+        public int Convertir()
+        {
+            int id;
+            int.TryParse(VentaIdtextBox.Text,out id);
+            return id;
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            Ventas ventas = new Ventas();
+            ventas.VentaId = Convertir();
+
+            if (ventas.Eliminar())
+            {
+                MessageBox.Show("Venta Eliminada","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Nuevobutton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("Error al eliminar","alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+            Ventas venta = new Ventas();
+            venta.Insertar();
+         
+            
+
+        }
+
+        private void BuscarProductobutton_Click(object sender, EventArgs e)
+        {
+            int productoId;
+            int.TryParse(ProductoIdtextBox.Text, out productoId);
+            Productos producto = new Productos();
+
+            
+            if (producto.Buscar(productoId))
+            {
+                MessageBox.Show("Producto encontrado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PreciotextBox.Text = producto.Precio.ToString();
+                NombretextBox.Text = producto.Nombre;
+                string codigo = "";
+                ITBIStextBox.Text = producto.Costo.ToString();
+                VentasdataGridView.Rows.Add(producto.ProductoId.ToString(), producto.Nombre, CantidadtextBox.Text, producto.Precio.ToString(), producto.ITBIS.ToString(), DescuentostextBox.Text);
+
+                foreach (DataGridViewRow row in VentasdataGridView.Rows)
+                {
+
+                     codigo += Convert.ToString(row.Cells["ProductoId"].Value);
+
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show("El producto no existe", "alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+         //VentasdataGridView.Columns.Insert(0,producto.Precio.ToString());
+        }
     }
 }

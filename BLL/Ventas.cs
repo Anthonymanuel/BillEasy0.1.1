@@ -12,6 +12,8 @@ namespace BLL
     {
         public int VentaId { get; set; }
         public int ClienteId { get; set; }
+        public int UsuarioId { get; set; }
+        public int ProductoId { get; set; }
         public string Fecha { get; set; }
         public float ITBIS { get; set; }
         public float Descuento { get; set; }
@@ -21,12 +23,13 @@ namespace BLL
         public float Total { get; set; }
         public int Cantidad { get; set; }
         public float Precio { get; set; }
-        public List<Usuarios> Usuario { get; set; }
+        public List<Productos> Producto { get; set;}
 
         public Ventas()
         {
             this.VentaId = 0;
             this.ClienteId = 0;
+            this.UsuarioId = 0;
             this.Fecha = "";
             this.ITBIS = 0f;
             this.Descuento = 0f;
@@ -36,12 +39,14 @@ namespace BLL
             this.Total = 0f;
             this.Cantidad = 0;
             this.Precio = 0f;
-            Usuario = new List<Usuarios>();
+            Producto = new List<Productos>();
         }
-        public void AgregarUsuario(int usuarioId,string nombre)
+
+        public void AgregarProducto(int productoId)
         {
-            this.Usuario.Add(new Usuarios(usuarioId, nombre));
+            this.Producto.Add(new Productos(productoId));
         }
+      
         public override bool Insertar()
         {
             ConexionDb conexion = new ConexionDb();
@@ -54,9 +59,9 @@ namespace BLL
             {
                 this.VentaId = (int)conexion.ObtenerDatos("Select MAX(VentaId) as VentaId from Ventas").Rows[0]["VentaId"];
 
-                foreach(var usuario in Usuario)
+                foreach(var producto in Producto)
                 {
-                    comando.AppendLine(String.Format("Insert into DetallesVentas(VentaId,UsuarioId,ClienteId,Cantidad,Precio) values({0},{1},{2},{3},{4})",this.VentaId,usuario.UsuarioId,this.ClienteId,this.Cantidad,this.Precio));
+                    comando.AppendLine(String.Format("Insert into DetallesVentas(ProductoId) values({0})",producto.ProductoId));
                 }
 
                 retorno = conexion.Ejecutar(comando.ToString());
@@ -77,10 +82,10 @@ namespace BLL
             {
                 conexion.Ejecutar("Delete from DetallesVentas where VentasId = " + this.VentaId);
 
-                foreach(var usuario in Usuario)
+                /*foreach()
                 {
-                    comando.AppendLine(String.Format("Insert into DetallesVentas(VentaId,UsuarioId,ClienteId,Cantidad,Precio) values({0},{1},{2},{3},{4})", this.VentaId, usuario.UsuarioId, this.ClienteId, this.Cantidad, this.Precio));
-                }
+                    comando.AppendLine(String.Format("Insert into DetallesVentas(VentaId,UsuarioId,ClienteId,ProductoId,Cantidad,Precio) values({0},{1},{2},{3},{4},{5})", this.VentaId, usuario.UsuarioId, this.ClienteId,this.ProductoId, this.Cantidad, this.Precio));
+                }*/
                 retorno = conexion.Ejecutar(comando.ToString());
             }
             return retorno;
@@ -90,7 +95,7 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno = false;
-            retorno = conexion.Ejecutar("Delete from Ventas where VentaId =" +this.VentaId + ";" + "Delete from DetallesVentas where VentaId = " +this.VentaId);
+            retorno = conexion.Ejecutar("Delete from Ventas where VentaId = " +this.VentaId + ";" + "Delete from DetallesVentas where VentaId = " +this.VentaId);
 
             return retorno;
 
@@ -116,10 +121,10 @@ namespace BLL
                 this.TipoNFC = dt.Rows[0]["TipoNFC"].ToString();
                 this.Total = (float)dt.Rows[0]["Total"];
 
-                this.Usuario.Clear();
+                this.Producto.Clear();
                 foreach(DataRow row in dtUsuarios.Rows)
                 {
-                    this.AgregarUsuario((int)row["UsuarioId"],row["Nombres"].ToString());
+                    this.AgregarProducto((int)row["UsuarioId"]);
                 }
             }
 

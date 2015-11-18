@@ -65,7 +65,7 @@ Precio Float,
 Costo Float,
 ITBIS Float
 )
-
+select *from Productos
 
 
 Create Table Proveedores(

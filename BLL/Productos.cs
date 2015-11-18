@@ -41,6 +41,10 @@ namespace BLL
             this.Costo = costo;
             this.ITBIS = iTBIS;
         }
+        public Productos(int productoId)
+        {
+            this.ProductoId = productoId;
+        }
 
         public override bool Buscar(int idBuscado)
         {

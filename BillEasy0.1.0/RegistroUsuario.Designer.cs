@@ -204,7 +204,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 318);
+            this.ClientSize = new System.Drawing.Size(379, 317);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.ButtonGuardar);
             this.Controls.Add(this.EliminarButton);
@@ -230,6 +230,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de usuarios";
             this.TransparencyKey = System.Drawing.Color.MintCream;
+            this.Load += new System.EventHandler(this.RegistroUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
