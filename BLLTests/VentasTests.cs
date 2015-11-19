@@ -44,7 +44,8 @@ namespace BLL.Tests
         [TestMethod()]
         public void BuscarTest()
         {
-            Assert.Fail();
+            Ventas ventas = new Ventas();
+            Assert.IsTrue(ventas.Buscar(2));
         }
 
         [TestMethod()]

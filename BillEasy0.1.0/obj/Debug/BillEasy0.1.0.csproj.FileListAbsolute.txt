@@ -52,3 +52,4 @@ C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillE
 C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroUsuario.resources
 C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.csproj.GenerateResource.Cache
 C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroVentas.resources
+C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.AcercaDe.resources

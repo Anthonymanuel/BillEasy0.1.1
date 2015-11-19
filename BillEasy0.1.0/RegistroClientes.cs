@@ -122,12 +122,7 @@ namespace BillEasy0._1._0
         {
             DataTable table = new DataTable();
             Clientes clientes = new Clientes();
-            table = clientes.Listado("Nombres,MAX(ClienteId) as Cantidad","1=1 group By Nombres", "");
-            Clienteschart.Series.Add("Direccion");
-            Clienteschart.Series["Direccion"].XValueMember = "Nombres";
-            Clienteschart.Series["Direccion"].YValueMembers = "Cantidad";
-            Clienteschart.DataSource = table;
-            Clienteschart.DataBind();
+            
 
             if (ClienteIdtextBox.TextLength == 0)
             {
@@ -176,6 +171,7 @@ namespace BillEasy0._1._0
                 DirecciontextBox.Text = clientes.Direccion;
                 EmailtextBox.Text = clientes.Email;
                 CedulamaskedTextBox.Text = clientes.Cedula;
+                CiudadcomboBox.SelectedValue = clientes.CiudadId;
                 
             }
             else

@@ -199,5 +199,6 @@ namespace BillEasy0._1._0
               CiudadComboBox.DisplayMember = "Nombre";
               CiudadComboBox.ValueMember = "CiudadId";
         }
+
     }
 }

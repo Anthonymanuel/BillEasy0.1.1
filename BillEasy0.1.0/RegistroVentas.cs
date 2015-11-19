@@ -37,15 +37,30 @@ namespace BillEasy0._1._0
             ClientecomboBox.DataSource = cliente.Listado("*", "1=1", "");
             ClientecomboBox.DisplayMember = "Nombres";
             ClientecomboBox.ValueMember = "ClienteId";
-            
+
         }
         public int Convertir()
         {
             int id;
-            int.TryParse(VentaIdtextBox.Text,out id);
+            int.TryParse(VentaIdtextBox.Text, out id);
             return id;
         }
-
+        public void LlenarDatos(Ventas venta)
+        {
+            float itbis, total;
+            float.TryParse(ITBIStextBox.Text, out itbis);
+            float.TryParse(TotaltextBox.Text,out total);
+            int id;
+            int.TryParse(VentaIdtextBox.Text, out id);
+            venta.VentaId = id;
+            venta.ClienteId = (int)ClientecomboBox.SelectedValue;
+            venta.TipoVenta = TipoVentastextBox.Text;
+            venta.NFC = NFCtextBox.Text;
+            venta.TipoNFC = TipoNFCtextBox.Text;
+            venta.Fecha = FechadateTimePicker.Text;
+            venta.ITBIS = itbis;
+            venta.Total = total;
+        }
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             Ventas ventas = new Ventas();
@@ -65,12 +80,17 @@ namespace BillEasy0._1._0
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Ventas venta = new Ventas();
-            venta.Insertar();
-         
-            
-
+            LlenarDatos(venta);
+            if (venta.Insertar())
+            {
+                MessageBox.Show("Venta Guardada","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Nuevobutton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
-
         private void BuscarProductobutton_Click(object sender, EventArgs e)
         {
             int productoId;
@@ -80,12 +100,12 @@ namespace BillEasy0._1._0
             
             if (producto.Buscar(productoId))
             {
-                MessageBox.Show("Producto encontrado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Producto encontrado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 PreciotextBox.Text = producto.Precio.ToString();
                 NombretextBox.Text = producto.Nombre;
                 string codigo = "";
                 ITBIStextBox.Text = producto.Costo.ToString();
-                VentasdataGridView.Rows.Add(producto.ProductoId.ToString(), producto.Nombre, CantidadtextBox.Text, producto.Precio.ToString(), producto.ITBIS.ToString(), DescuentostextBox.Text);
+                //VentasdataGridView.Rows.Add(producto.ProductoId.ToString(), producto.Nombre, CantidadtextBox.Text, producto.Precio.ToString(), producto.ITBIS.ToString(), DescuentostextBox.Text);
 
                 foreach (DataGridViewRow row in VentasdataGridView.Rows)
                 {
@@ -100,6 +120,31 @@ namespace BillEasy0._1._0
                 MessageBox.Show("El producto no existe", "alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
          //VentasdataGridView.Columns.Insert(0,producto.Precio.ToString());
+        }
+
+        private void BuscarVentabutton_Click(object sender, EventArgs e)
+        {
+            Ventas ventas = new Ventas();
+            if (ventas.Buscar(Convertir()))
+            {
+                ClientecomboBox.SelectedValue = ventas.ClienteId;
+                TipoVentastextBox.Text = ventas.TipoVenta;
+                NFCtextBox.Text = ventas.NFC;
+                TipoNFCtextBox.Text = ventas.TipoNFC;
+                FechadateTimePicker.Text = ventas.Fecha;
+                ITBIStextBox.Text = ventas.ITBIS.ToString();
+                TotaltextBox.Text = ventas.Total.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Id invalido","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void Agregarbutton_Click(object sender, EventArgs e)
+        {
+            VentasdataGridView.Rows.Add(ProductoIdtextBox.Text, NombretextBox.Text, CantidadtextBox.Text, PreciotextBox.Text, ITBIStextBox.Text, DescuentostextBox.Text);
         }
     }
 }

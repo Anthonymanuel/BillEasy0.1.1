@@ -129,6 +129,7 @@
             this.ContrasenaTextBox.Name = "ContrasenaTextBox";
             this.ContrasenaTextBox.Size = new System.Drawing.Size(191, 20);
             this.ContrasenaTextBox.TabIndex = 9;
+            this.ContrasenaTextBox.UseSystemPasswordChar = true;
             // 
             // AreaTextBox
             // 

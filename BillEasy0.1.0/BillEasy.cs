@@ -123,5 +123,12 @@ namespace BillEasy0._1._0
             registroVenta.MdiParent = this;
             registroVenta.Show();
         }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcercaDe acercaDe = new AcercaDe();
+            acercaDe.MdiParent = this;
+            acercaDe.Show();
+        }
     }
 }

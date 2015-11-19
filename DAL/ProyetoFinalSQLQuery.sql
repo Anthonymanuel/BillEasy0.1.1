@@ -42,6 +42,7 @@ TipoNFC Varchar(20),
 Total Float
 )
 drop Table Ventas
+select *from ventas
 
 Create Table Compras(
 CompraId Int Identity Primary Key,
