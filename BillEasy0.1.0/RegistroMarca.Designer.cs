@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.ButtonGuardar = new System.Windows.Forms.Button();
+            this.BuscarButton = new System.Windows.Forms.Button();
+            this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
             this.NombreTextBox = new System.Windows.Forms.TextBox();
-            this.MarcaIdtextBox = new System.Windows.Forms.TextBox();
+            this.MarcaIdTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,33 +41,33 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Buscarbutton
+            // BuscarButton
             // 
-            this.Buscarbutton.Image = global::BillEasy0._1._0.Properties.Resources._1443839488_file_search;
-            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(230, 16);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(74, 42);
-            this.Buscarbutton.TabIndex = 31;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            this.BuscarButton.Image = global::BillEasy0._1._0.Properties.Resources._1443839488_file_search;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarButton.Location = new System.Drawing.Point(230, 16);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(74, 42);
+            this.BuscarButton.TabIndex = 5;
+            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
-            // ButtonGuardar
+            // GuardarButton
             // 
-            this.ButtonGuardar.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
-            this.ButtonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonGuardar.Location = new System.Drawing.Point(143, 103);
-            this.ButtonGuardar.MaximumSize = new System.Drawing.Size(81, 44);
-            this.ButtonGuardar.MinimumSize = new System.Drawing.Size(81, 44);
-            this.ButtonGuardar.Name = "ButtonGuardar";
-            this.ButtonGuardar.Size = new System.Drawing.Size(81, 44);
-            this.ButtonGuardar.TabIndex = 30;
-            this.ButtonGuardar.Text = "Guardar";
-            this.ButtonGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ButtonGuardar.UseVisualStyleBackColor = true;
-            this.ButtonGuardar.Click += new System.EventHandler(this.ButtonGuardar_Click);
+            this.GuardarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GuardarButton.Location = new System.Drawing.Point(143, 103);
+            this.GuardarButton.MaximumSize = new System.Drawing.Size(81, 44);
+            this.GuardarButton.MinimumSize = new System.Drawing.Size(81, 44);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(81, 44);
+            this.GuardarButton.TabIndex = 3;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // EliminarButton
             // 
@@ -76,38 +76,38 @@
             this.EliminarButton.Location = new System.Drawing.Point(239, 103);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(81, 44);
-            this.EliminarButton.TabIndex = 29;
+            this.EliminarButton.TabIndex = 4;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
-            // Nuevobutton
+            // NuevoButton
             // 
-            this.Nuevobutton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
-            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(46, 103);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
-            this.Nuevobutton.TabIndex = 28;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            this.NuevoButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
+            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NuevoButton.Location = new System.Drawing.Point(46, 103);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(81, 44);
+            this.NuevoButton.TabIndex = 2;
+            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // NombreTextBox
             // 
             this.NombreTextBox.Location = new System.Drawing.Point(113, 64);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(191, 20);
-            this.NombreTextBox.TabIndex = 23;
+            this.NombreTextBox.TabIndex = 1;
             // 
-            // MarcaIdtextBox
+            // MarcaIdTextBox
             // 
-            this.MarcaIdtextBox.Location = new System.Drawing.Point(113, 28);
-            this.MarcaIdtextBox.Name = "MarcaIdtextBox";
-            this.MarcaIdtextBox.Size = new System.Drawing.Size(111, 20);
-            this.MarcaIdtextBox.TabIndex = 22;
+            this.MarcaIdTextBox.Location = new System.Drawing.Point(113, 28);
+            this.MarcaIdTextBox.Name = "MarcaIdTextBox";
+            this.MarcaIdTextBox.Size = new System.Drawing.Size(111, 20);
+            this.MarcaIdTextBox.TabIndex = 0;
             // 
             // label2
             // 
@@ -130,12 +130,12 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.ButtonGuardar);
-            this.groupBox1.Controls.Add(this.Buscarbutton);
+            this.groupBox1.Controls.Add(this.GuardarButton);
+            this.groupBox1.Controls.Add(this.BuscarButton);
             this.groupBox1.Controls.Add(this.EliminarButton);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.Nuevobutton);
-            this.groupBox1.Controls.Add(this.MarcaIdtextBox);
+            this.groupBox1.Controls.Add(this.NuevoButton);
+            this.groupBox1.Controls.Add(this.MarcaIdTextBox);
             this.groupBox1.Controls.Add(this.NombreTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 70);
             this.groupBox1.Name = "groupBox1";
@@ -162,6 +162,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroMarca";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de marcas";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -172,12 +173,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Buscarbutton;
-        private System.Windows.Forms.Button ButtonGuardar;
+        private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
-        private System.Windows.Forms.Button Nuevobutton;
+        private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.TextBox NombreTextBox;
-        private System.Windows.Forms.TextBox MarcaIdtextBox;
+        private System.Windows.Forms.TextBox MarcaIdTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;

@@ -81,9 +81,10 @@ namespace BLL
             DataTable dtCiudades = new DataTable();
            
             dt = conexion.ObtenerDatos(String.Format("Select *from Clientes where ClienteId = {0}",idBuscado));
+            //dtCiudades = conexion.ObtenerDatos(String.Format("Select c.Nombre from Ciudades c inner join Clientes cl on c.CiudadId = cl.CiudadId where ClienteId = {0}",idBuscado));
             if(dt.Rows.Count > 0)
             {
-                CiudadId = (int)dt.Rows[0]["CiudadId"];
+                
                 this.Nombres = dt.Rows[0]["Nombres"].ToString();
                 this.Apellidos = dt.Rows[0]["Apellidos"].ToString();
                 this.Telefono = dt.Rows[0]["Telefono"].ToString();

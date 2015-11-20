@@ -66,16 +66,16 @@ namespace BillEasy0._1._0
             clientes.Show();
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ConsultaClientes consultaClientes = new ConsultaClientes();
             consultaClientes.MdiParent = this;
             consultaClientes.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void BillEasy_FormClosed(object sender, FormClosedEventArgs e)
@@ -112,11 +112,6 @@ namespace BillEasy0._1._0
             proveedor.Show();
         }
 
-        private void BillEasy_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistroVentas registroVenta = new RegistroVentas();
@@ -124,11 +119,11 @@ namespace BillEasy0._1._0
             registroVenta.Show();
         }
 
-        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AcercaDe acercaDe = new AcercaDe();
-            acercaDe.MdiParent = this;
-            acercaDe.Show();
+            RegistroCompras registroCompra = new RegistroCompras();
+            registroCompra.MdiParent = this;
+            registroCompra.Show();
         }
     }
 }

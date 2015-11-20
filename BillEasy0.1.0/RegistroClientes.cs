@@ -20,18 +20,6 @@ namespace BillEasy0._1._0
             miError = new ErrorProvider();
         }
 
-        private void Nuevobutton_Click(object sender, EventArgs e)
-        {
-            ClienteIdtextBox.Clear();
-            NombrestextBox.Clear();
-            ApellidostextBox.Clear();
-            TelefonomaskedTextBox.Clear();
-            CelularmaskedTextBox.Clear();
-            DirecciontextBox.Clear();
-            EmailtextBox.Clear();
-            CedulamaskedTextBox.Clear();
-        }
-
         public void Datos(Clientes clientes)
         {
             
@@ -118,11 +106,77 @@ namespace BillEasy0._1._0
             return contador;
         }
 
-        private void Guardarbutton_Click(object sender, EventArgs e)
+        public int ConversionId()
+        {
+            int id;
+            int.TryParse(ClienteIdtextBox.Text, out id);
+
+            return id;
+        }
+
+        private void RegistroClientes_Load(object sender, EventArgs e)
+        {
+            Ciudades ciudades = new Ciudades();
+            CiudadcomboBox.DataSource = ciudades.Listado("CiudadId,Nombre,CodigoPostal ", "1=1", "");
+            CiudadcomboBox.DisplayMember = string.Format("Nombre");
+            CiudadcomboBox.ValueMember = "CiudadId";
+
+            DataTable table = new DataTable();
+            Clientes clientes = new Clientes();
+            table = clientes.Listado("CiudadId, count(*) as ClienteId", "1=1 group by CiudadId", "");
+            Clienteschart.Series.Add("Clientes");
+            Clienteschart.Series["Clientes"].XValueMember = "CiudadId";
+            Clienteschart.Series["Clientes"].YValueMembers = "ClienteId";
+            Clienteschart.DataSource = table;
+            Clienteschart.DataBind();
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            Clientes clientes = new Clientes();
+            Ciudades ciudad = new Ciudades();
+
+            if (clientes.Buscar(ConversionId()))
+            {
+                NombrestextBox.Text = clientes.Nombres;
+                ApellidostextBox.Text = clientes.Apellidos;
+                TelefonomaskedTextBox.Text = clientes.Telefono;
+                CelularmaskedTextBox.Text = clientes.Celular;
+                DirecciontextBox.Text = clientes.Direccion;
+                EmailtextBox.Text = clientes.Email;
+                CedulamaskedTextBox.Text = clientes.Cedula;
+
+            }
+            else
+            {
+                MessageBox.Show("El id especificado no existe", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            ClienteIdtextBox.Clear();
+            NombrestextBox.Clear();
+            ApellidostextBox.Clear();
+            TelefonomaskedTextBox.Clear();
+            CelularmaskedTextBox.Clear();
+            DirecciontextBox.Clear();
+            EmailtextBox.Clear();
+            CedulamaskedTextBox.Clear();
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
         {
             DataTable table = new DataTable();
             Clientes clientes = new Clientes();
-            
+            table = clientes.Listado("Nombres,MAX(ClienteId) count(*) as CiudadId","1=1 group By Nombres", "");
+            Clienteschart.Series.Add("Direccion");
+            Clienteschart.Series["Direccion"].XValueMember = "Nombres";
+            Clienteschart.Series["Direccion"].YValueMembers = "CiudadId";
+            Clienteschart.DataSource = table;
+            Clienteschart.DataBind();
 
             if (ClienteIdtextBox.TextLength == 0)
             {
@@ -150,39 +204,8 @@ namespace BillEasy0._1._0
                 NuevoButton.PerformClick();
             }
         }
-        public int ConversionId()
-        {
-            int id;
-            int.TryParse(ClienteIdtextBox.Text,out id);
 
-            return id;
-        }
-        private void Buscarbutton_Click(object sender, EventArgs e)
-        {
-            Clientes clientes = new Clientes();
-            Ciudades ciudad = new Ciudades();
-     
-            if (clientes.Buscar(ConversionId()))
-            {
-                NombrestextBox.Text = clientes.Nombres;
-                ApellidostextBox.Text = clientes.Apellidos;
-                TelefonomaskedTextBox.Text = clientes.Telefono;
-                CelularmaskedTextBox.Text = clientes.Celular;
-                DirecciontextBox.Text = clientes.Direccion;
-                EmailtextBox.Text = clientes.Email;
-                CedulamaskedTextBox.Text = clientes.Cedula;
-                CiudadcomboBox.SelectedValue = clientes.CiudadId;
-                
-            }
-            else
-            {
-                MessageBox.Show("El id especificado no existe","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-            
-
-        }
-
-        private void Eliminarbutton_Click(object sender, EventArgs e)
+        private void EliminarButton_Click(object sender, EventArgs e)
         {
             Clientes clientes = new Clientes();
             clientes.ClienteId = ConversionId();
@@ -194,25 +217,6 @@ namespace BillEasy0._1._0
             {
                 MessageBox.Show("Ese cliente no existe","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-        }
-
-        private void RegistroClientes_Load(object sender, EventArgs e)
-        {
-            Ciudades ciudades = new Ciudades();
-            CiudadcomboBox.DataSource = ciudades.Listado("CiudadId,Nombre,CodigoPostal ","1=1","");
-            CiudadcomboBox.DisplayMember = string.Format("Nombre");
-            CiudadcomboBox.ValueMember = "CiudadId";
-
-            DataTable table = new DataTable();
-            Clientes clientes = new Clientes();
-            table = clientes.Listado("CiudadId, count(*) as ClienteId", "1=1 group by CiudadId", "");
-            Clienteschart.Series.Add("Clientes");
-            Clienteschart.Series["Clientes"].XValueMember = "CiudadId";
-            Clienteschart.Series["Clientes"].YValueMembers = "ClienteId";
-            Clienteschart.DataSource = table;
-            Clienteschart.DataBind();
-        }
-
-        
+        } 
     }
 }
