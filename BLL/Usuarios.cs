@@ -67,21 +67,15 @@ namespace BLL
             }
             return respuesta2;
         }
-        public override bool Buscar(int idBuscado)
+
+        public override bool Insertar()
         {
             ConexionDb conexion = new ConexionDb();
-            DataTable dt = new DataTable();
-            dt = (conexion.ObtenerDatos(String.Format("Select UsuarioId, Nombres,NombreUsuario,Contrasena,Area,Fecha From Usuarios Where UsuarioId = {0}", idBuscado)));
-            if (dt.Rows.Count > 0)
-            {
-                this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
-                this.Nombre = dt.Rows[0]["Nombres"].ToString();
-                this.NombreUsuario = dt.Rows[0]["NombreUsuario"].ToString();
-                this.Contrasena = dt.Rows[0]["Contrasena"].ToString();
-                this.Area = dt.Rows[0]["Area"].ToString();
-                this.Fecha = dt.Rows[0]["Fecha"].ToString();
-            }
-            return dt.Rows.Count > 0;
+            bool retorno = false;
+
+            retorno = conexion.Ejecutar(string.Format("Insert into Usuarios(Nombres,NombreUsuario,Contrasena,Area,Fecha) values('{0}','{1}','{2}','{3}','{4}')", this.Nombre, this.NombreUsuario, this.Contrasena, this.Area, this.Fecha));
+
+            return retorno;
         }
 
         public override bool Editar()
@@ -100,14 +94,21 @@ namespace BLL
             return retorno;
         }
 
-        public override bool Insertar()
+        public override bool Buscar(int idBuscado)
         {
             ConexionDb conexion = new ConexionDb();
-            bool retorno = false;
-
-            retorno = conexion.Ejecutar(string.Format("Insert into Usuarios(Nombres,NombreUsuario,Contrasena,Area,Fecha) values('{0}','{1}','{2}','{3}','{4}')", this.Nombre, this.NombreUsuario, this.Contrasena, this.Area, this.Fecha));
-
-            return retorno;
+            DataTable dt = new DataTable();
+            dt = (conexion.ObtenerDatos(String.Format("Select UsuarioId, Nombres,NombreUsuario,Contrasena,Area,Fecha From Usuarios Where UsuarioId = {0}", idBuscado)));
+            if (dt.Rows.Count > 0)
+            {
+                this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
+                this.Nombre = dt.Rows[0]["Nombres"].ToString();
+                this.NombreUsuario = dt.Rows[0]["NombreUsuario"].ToString();
+                this.Contrasena = dt.Rows[0]["Contrasena"].ToString();
+                this.Area = dt.Rows[0]["Area"].ToString();
+                this.Fecha = dt.Rows[0]["Fecha"].ToString();
+            }
+            return dt.Rows.Count > 0;
         }
 
         public override DataTable Listado(string campos, string condicion, string orden)

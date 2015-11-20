@@ -43,6 +43,7 @@
     <Compile Include="ClaseMaestra.cs" />
     <Compile Include="Clientes.cs" />
     <Compile Include="Ciudades.cs" />
+    <Compile Include="Compras.cs" />
     <Compile Include="Marcas.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="Proveedores.cs" />

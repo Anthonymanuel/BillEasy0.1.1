@@ -51,42 +51,42 @@ namespace BillEasy0._1._0
             return retorno;
         }
 
-        private void Buscarbutton_Click(object sender, EventArgs e)
+        private void BuscarButton_Click(object sender, EventArgs e)
         {
             Marcas marca = new Marcas();
             int id;
-            int.TryParse(MarcaIdtextBox.Text, out id);
+            int.TryParse(MarcaIdTextBox.Text, out id);
             marca.Buscar(id);
             NombreTextBox.Text = marca.Nombre;
         }
 
-        private void Nuevobutton_Click(object sender, EventArgs e)
+        private void NuevoButton_Click(object sender, EventArgs e)
         {
-            MarcaIdtextBox.Clear();
+            MarcaIdTextBox.Clear();
             NombreTextBox.Clear();
         }
 
-        private void ButtonGuardar_Click(object sender, EventArgs e)
+        private void GuardarButton_Click(object sender, EventArgs e)
         {
             Marcas marca = new Marcas();
-            if (MarcaIdtextBox.Text.Length > 0 && Validar() == 1 && Error() == 0)
+            if (MarcaIdTextBox.Text.Length > 0 && Validar() == 1 && Error() == 0)
             {
                 int id;
-                int.TryParse(MarcaIdtextBox.Text, out id);
+                int.TryParse(MarcaIdTextBox.Text, out id);
                 marca.MarcaId = id;
                 LlenarDatos(marca);
                 Validar();
                 if (marca.Editar() && Error() == 0 && Validar() == 1 )
                 {
                     MessageBox.Show("Marca Editada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Nuevobutton.PerformClick();
+                    NuevoButton.PerformClick();
                 }
                 else
                 {
                     MessageBox.Show("Error al insertar la marca ", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (MarcaIdtextBox.Text.Length == 0 && Error() == 0 && Validar() == 1 )
+            else if (MarcaIdTextBox.Text.Length == 0 && Error() == 0 && Validar() == 1 )
             {
                 LlenarDatos(marca);
                 Error();
@@ -94,7 +94,7 @@ namespace BillEasy0._1._0
                 if (marca.Insertar())
                 {
                     MessageBox.Show("Marca Guardada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Nuevobutton.PerformClick();
+                    NuevoButton.PerformClick();
                 }
                 else
                 {
@@ -107,19 +107,19 @@ namespace BillEasy0._1._0
         {
             Marcas marca = new Marcas();
             int id;
-            if (MarcaIdtextBox.TextLength == 0)
+            if (MarcaIdTextBox.TextLength == 0)
             {
                 MessageBox.Show("Debe especificar el ID", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
-            if (MarcaIdtextBox.Text.Length > 0)
+            if (MarcaIdTextBox.Text.Length > 0)
             {
-                int.TryParse(MarcaIdtextBox.Text, out id);
+                int.TryParse(MarcaIdTextBox.Text, out id);
                 marca.MarcaId = id;
                 if (marca.Eliminar())
                 {
                     MessageBox.Show("Marca Eliminada correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Nuevobutton.PerformClick();
+                    NuevoButton.PerformClick();
                 }
                 else
                 {

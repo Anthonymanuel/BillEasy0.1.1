@@ -1,55 +1,28 @@
-C:\Users\Anthony\Source\Repos\BillEasy0.1.02\BillEasy0.1.0\bin\Debug\BillEasy0.1.0.exe.config
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\bin\Debug\BillEasy0.1.0.exe.config
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.csprojResolveAssemblyReference.cache
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.BillEasy.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaCiudad.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaClientes.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaMarca.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaUsuario.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.Login.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.Properties.Resources.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroCiudad.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroClientes.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroMarca.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroUsuario.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.csproj.GenerateResource.Cache
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\bin\Debug\BillEasy0.1.0.exe
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\bin\Debug\BillEasy0.1.0.pdb
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\bin\Debug\BLL.dll
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\bin\Debug\DAL.dll
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\bin\Debug\BLL.pdb
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\bin\Debug\DAL.pdb
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.exe
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.pdb
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroProducto.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroProveedor.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaProducto.resources
-C:\Users\Anthony\Desktop\Nueva carpeta\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaProveedores.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\BillEasy0.1.0.exe.config
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.exe
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.pdb
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\BillEasy0.1.0.exe
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\BillEasy0.1.0.pdb
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\BLL.dll
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\DAL.dll
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\BLL.pdb
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\DAL.pdb
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.csprojResolveAssemblyReference.cache
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.BillEasy.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaCiudad.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaClientes.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaMarca.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaProducto.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaProveedores.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaUsuario.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.Login.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.Properties.Resources.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroCiudad.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroClientes.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroMarca.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroProducto.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroProveedor.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroUsuario.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.csproj.GenerateResource.Cache
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroVentas.resources
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.AcercaDe.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\BillEasy0.1.0.exe.config
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\BillEasy0.1.0.exe
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\BillEasy0.1.0.pdb
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\BLL.dll
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\DAL.dll
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\BLL.pdb
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\bin\Debug\DAL.pdb
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.csprojResolveAssemblyReference.cache
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.BillEasy.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaCiudad.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaClientes.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaMarca.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaProducto.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaProveedores.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.ConsultaUsuario.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.Login.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.Properties.Resources.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroCiudad.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroClientes.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroMarca.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroProducto.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroProveedor.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroUsuario.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroVentas.resources
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.csproj.GenerateResource.Cache
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.exe
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0.1.0.pdb
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BillEasy0.1.0\obj\Debug\BillEasy0._1._0.RegistroCompras.resources

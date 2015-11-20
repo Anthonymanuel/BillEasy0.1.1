@@ -1,14 +1,7 @@
-C:\Users\Anthony\Desktop\Nueva carpeta\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
-C:\Users\Anthony\Desktop\Nueva carpeta\BLL\bin\Debug\BLL.dll
-C:\Users\Anthony\Desktop\Nueva carpeta\BLL\bin\Debug\BLL.pdb
-C:\Users\Anthony\Desktop\Nueva carpeta\BLL\bin\Debug\DAL.dll
-C:\Users\Anthony\Desktop\Nueva carpeta\BLL\bin\Debug\DAL.pdb
-C:\Users\Anthony\Desktop\Nueva carpeta\BLL\obj\Debug\BLL.dll
-C:\Users\Anthony\Desktop\Nueva carpeta\BLL\obj\Debug\BLL.pdb
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BLL\bin\Debug\BLL.dll
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BLL\bin\Debug\BLL.pdb
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BLL\bin\Debug\DAL.dll
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BLL\bin\Debug\DAL.pdb
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BLL\obj\Debug\BLL.dll
-C:\Users\Junior Gabriel\Source\Repos\BillEasy0.1.1\BLL\obj\Debug\BLL.pdb
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BLL\bin\Debug\BLL.dll
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BLL\bin\Debug\BLL.pdb
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BLL\bin\Debug\DAL.dll
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BLL\bin\Debug\DAL.pdb
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BLL\obj\Debug\BLL.dll
+C:\Users\Anthony\Desktop\BillEasy0.1.1\BLL\obj\Debug\BLL.pdb

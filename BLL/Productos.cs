@@ -46,23 +46,12 @@ namespace BLL
             this.ProductoId = productoId;
         }
 
-        public override bool Buscar(int idBuscado)
+        public override bool Insertar()
         {
+            bool retorno;
             ConexionDb conexion = new ConexionDb();
-            DataTable dt = new DataTable();
-            dt = conexion.ObtenerDatos(String.Format("Select ProductoId ,ProveedorId,MarcaId,Nombre,Cantidad,Precio,Costo,ITBIS From Productos Where ProductoID = {0} ", idBuscado));
-            if (dt.Rows.Count > 0)
-            {
-                this.ProductoId = (int)dt.Rows[0]["ProductoId"];
-                this.ProveedorId = (int)dt.Rows[0]["ProveedorId"];
-                this.MarcaId = (int)dt.Rows[0]["MarcaId"];
-                this.Nombre = dt.Rows[0]["Nombre"].ToString();
-                this.Cantidad = (int)dt.Rows[0]["Cantidad"];
-                this.Precio = Convert.ToSingle(dt.Rows[0]["Precio"]);
-                this.Costo = Convert.ToSingle(dt.Rows[0]["Costo"]);
-                this.ITBIS = Convert.ToSingle(dt.Rows[0]["ITBIS"]);
-            }
-            return dt.Rows.Count > 0;
+            retorno = conexion.Ejecutar(String.Format("Insert Into Productos(ProveedorId,MarcaId,Nombre,Cantidad,Precio,Costo,ITBIS) Values({0},{1},'{2}',{3},{4},{5},{6}) ", this.ProveedorId, this.MarcaId, this.Nombre, this.Cantidad, this.Precio, this.Costo, this.ITBIS, this.ProductoId));
+            return retorno;
         }
 
         public override bool Editar()
@@ -81,12 +70,23 @@ namespace BLL
             return retorno;
         }
 
-        public override bool Insertar()
+        public override bool Buscar(int idBuscado)
         {
-            bool retorno;
             ConexionDb conexion = new ConexionDb();
-            retorno = conexion.Ejecutar(String.Format("Insert Into Productos(ProveedorId,MarcaId,Nombre,Cantidad,Precio,Costo,ITBIS) Values({0},{1},'{2}',{3},{4},{5},{6}) ", this.ProveedorId, this.MarcaId, this.Nombre, this.Cantidad, this.Precio, this.Costo, this.ITBIS, this.ProductoId));
-            return retorno;
+            DataTable dt = new DataTable();
+            dt = conexion.ObtenerDatos(String.Format("Select ProductoId ,ProveedorId,MarcaId,Nombre,Cantidad,Precio,Costo,ITBIS From Productos Where ProductoID = {0} ", idBuscado));
+            if (dt.Rows.Count > 0)
+            {
+                this.ProductoId = (int)dt.Rows[0]["ProductoId"];
+                this.ProveedorId = (int)dt.Rows[0]["ProveedorId"];
+                this.MarcaId = (int)dt.Rows[0]["MarcaId"];
+                this.Nombre = dt.Rows[0]["Nombre"].ToString();
+                this.Cantidad = (int)dt.Rows[0]["Cantidad"];
+                this.Precio = Convert.ToSingle(dt.Rows[0]["Precio"]);
+                this.Costo = Convert.ToSingle(dt.Rows[0]["Costo"]);
+                this.ITBIS = Convert.ToSingle(dt.Rows[0]["ITBIS"]);
+            }
+            return dt.Rows.Count > 0;
         }
 
         public override DataTable Listado(string campos, string condicion, string orden)

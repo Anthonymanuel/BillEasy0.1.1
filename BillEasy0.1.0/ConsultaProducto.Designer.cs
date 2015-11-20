@@ -126,6 +126,7 @@
             this.Controls.Add(this.BuscarcomboBox);
             this.Controls.Add(this.label1);
             this.Name = "ConsultaProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Productos";
             ((System.ComponentModel.ISupportInitialize)(this.DatosdataGridView)).EndInit();
             this.ResumeLayout(false);
