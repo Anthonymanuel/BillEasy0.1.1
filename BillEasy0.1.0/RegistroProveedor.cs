@@ -103,23 +103,7 @@ namespace BillEasy0._1._0
             return contador;
         }
 
-        public int Convertidor()
-        {
-            int id;
-            int.TryParse(ProveedorIdTextBox.Text, out id);
-            return id;
-        }
-
-        private void RegistroProveedor_Load_1(object sender, EventArgs e)
-        {
-
-            Ciudades ciudad = new Ciudades();
-            CiudadComboBox.DataSource = ciudad.Listado("CiudadId,Nombre,CodigoPostal ", "1=1", "");
-            CiudadComboBox.DisplayMember = "Nombre";
-            CiudadComboBox.ValueMember = "CiudadId";
-        }
-
-        private void BuscarButton_Click(object sender, EventArgs e)
+        private void Buscarbutton_Click(object sender, EventArgs e)
         {
             Proveedores proveedor = new Proveedores();
             int id;
@@ -135,7 +119,7 @@ namespace BillEasy0._1._0
             CelularTextBox.Text = proveedor.Celular;
         }
 
-        private void NuevoButton_Click(object sender, EventArgs e)
+        private void Nuevobutton_Click(object sender, EventArgs e)
         {
             ProveedorIdTextBox.Clear();
             NombreEmpresaTextBox.Clear();
@@ -146,8 +130,15 @@ namespace BillEasy0._1._0
             NombreRepresentanteTextBox.Clear();
             CelularTextBox.Clear();
         }
+        public int Convertidor()
+        {
+            int id;
+            int.TryParse(ProveedorIdTextBox.Text, out id);
+            return id;
+        }
+
        
-        private void GuardarButton_Click(object sender, EventArgs e)
+        private void ButtonGuardar_Click(object sender, EventArgs e)
         {
             Proveedores proveedor = new Proveedores();
            
@@ -157,7 +148,7 @@ namespace BillEasy0._1._0
                 if (proveedor.Insertar() && Error() == 0)
                 {
                     MessageBox.Show("Proveedor insertado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    NuevoButton.PerformClick();
+                    Nuevobutton.PerformClick();
                 }
                 else
                 {
@@ -171,7 +162,7 @@ namespace BillEasy0._1._0
                 if (proveedor.Editar())
                 {
                     MessageBox.Show("Proveedor editado","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    NuevoButton.PerformClick();
+                    Nuevobutton.PerformClick();
                 }
                 else
                 {
@@ -192,12 +183,22 @@ namespace BillEasy0._1._0
                 proveedor.ProveedorId = id;
                 if (proveedor.Eliminar())
                     MessageBox.Show("Proveedor Eliminado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                NuevoButton.PerformClick();
+                Nuevobutton.PerformClick();
             }
             else
             {
                 MessageBox.Show("Error al eliminar el proveedor", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void RegistroProveedor_Load_1(object sender, EventArgs e)
+        {
+  
+              Ciudades ciudad = new Ciudades();
+              CiudadComboBox.DataSource = ciudad.Listado("CiudadId,Nombre,CodigoPostal ", "1=1", "");
+              CiudadComboBox.DisplayMember = "Nombre";
+              CiudadComboBox.ValueMember = "CiudadId";
+        }
+
     }
 }

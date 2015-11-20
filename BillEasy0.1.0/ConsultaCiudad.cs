@@ -72,7 +72,7 @@ namespace BillEasy0._1._0
                 }
                 else
                 {
-                    condicion = string.Format("Nombre = '{0}'  ", DatostextBox.Text);
+                    condicion = string.Format("Nombre = '{0}' ", DatostextBox.Text);
                 }
                 dataTable = ciudad.Listado(" CiudadId, Nombre, CodigoPostal ", condicion, "");
                 DatosdataGridView.DataSource = dataTable;

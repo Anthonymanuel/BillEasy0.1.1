@@ -36,10 +36,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.BuscarButton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             this.ButtonGuardar = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
-            this.NuevoButton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
             this.TelefonoTextBox = new System.Windows.Forms.TextBox();
             this.DireccionTextBox = new System.Windows.Forms.TextBox();
             this.NombreEmpresaTextBox = new System.Windows.Forms.TextBox();
@@ -62,35 +62,35 @@
             this.CiudadComboBox.Location = new System.Drawing.Point(112, 73);
             this.CiudadComboBox.Name = "CiudadComboBox";
             this.CiudadComboBox.Size = new System.Drawing.Size(181, 21);
-            this.CiudadComboBox.TabIndex = 1;
+            this.CiudadComboBox.TabIndex = 37;
             // 
             // EmailTextBox
             // 
             this.EmailTextBox.Location = new System.Drawing.Point(414, 37);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(181, 20);
-            this.EmailTextBox.TabIndex = 5;
+            this.EmailTextBox.TabIndex = 41;
             // 
             // CelularTextBox
             // 
             this.CelularTextBox.Location = new System.Drawing.Point(414, 144);
             this.CelularTextBox.Name = "CelularTextBox";
             this.CelularTextBox.Size = new System.Drawing.Size(181, 20);
-            this.CelularTextBox.TabIndex = 8;
+            this.CelularTextBox.TabIndex = 44;
             // 
             // NombreRepresentanteTextBox
             // 
             this.NombreRepresentanteTextBox.Location = new System.Drawing.Point(414, 109);
             this.NombreRepresentanteTextBox.Name = "NombreRepresentanteTextBox";
             this.NombreRepresentanteTextBox.Size = new System.Drawing.Size(181, 20);
-            this.NombreRepresentanteTextBox.TabIndex = 7;
+            this.NombreRepresentanteTextBox.TabIndex = 43;
             // 
             // RNCTextBox
             // 
             this.RNCTextBox.Location = new System.Drawing.Point(414, 73);
             this.RNCTextBox.Name = "RNCTextBox";
             this.RNCTextBox.Size = new System.Drawing.Size(181, 20);
-            this.RNCTextBox.TabIndex = 6;
+            this.RNCTextBox.TabIndex = 42;
             // 
             // label7
             // 
@@ -119,87 +119,87 @@
             this.label9.TabIndex = 55;
             this.label9.Text = "Representante:";
             // 
-            // BuscarButton
+            // Buscarbutton
             // 
-            this.BuscarButton.Image = global::BillEasy0._1._0.Properties.Resources._1443839488_file_search;
-            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(219, 25);
-            this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(74, 42);
-            this.BuscarButton.TabIndex = 14;
-            this.BuscarButton.Text = "Buscar";
-            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BuscarButton.UseVisualStyleBackColor = true;
-            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
+            this.Buscarbutton.Image = global::BillEasy0._1._0.Properties.Resources._1443839488_file_search;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(219, 25);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(74, 42);
+            this.Buscarbutton.TabIndex = 54;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // ButtonGuardar
             // 
             this.ButtonGuardar.Image = global::BillEasy0._1._0.Properties.Resources._1445977752_Save;
             this.ButtonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonGuardar.Location = new System.Drawing.Point(474, 181);
+            this.ButtonGuardar.Location = new System.Drawing.Point(301, 213);
             this.ButtonGuardar.MaximumSize = new System.Drawing.Size(81, 44);
             this.ButtonGuardar.MinimumSize = new System.Drawing.Size(81, 44);
             this.ButtonGuardar.Name = "ButtonGuardar";
             this.ButtonGuardar.Size = new System.Drawing.Size(81, 44);
-            this.ButtonGuardar.TabIndex = 11;
+            this.ButtonGuardar.TabIndex = 46;
             this.ButtonGuardar.Text = "Guardar";
             this.ButtonGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonGuardar.UseVisualStyleBackColor = true;
-            this.ButtonGuardar.Click += new System.EventHandler(this.GuardarButton_Click);
+            this.ButtonGuardar.Click += new System.EventHandler(this.ButtonGuardar_Click);
             // 
             // EliminarButton
             // 
             this.EliminarButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976510_Delete;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EliminarButton.Location = new System.Drawing.Point(570, 180);
+            this.EliminarButton.Location = new System.Drawing.Point(397, 212);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(79, 47);
-            this.EliminarButton.TabIndex = 12;
+            this.EliminarButton.TabIndex = 47;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
-            // NuevoButton
+            // Nuevobutton
             // 
-            this.NuevoButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
-            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(380, 180);
-            this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(79, 47);
-            this.NuevoButton.TabIndex = 10;
-            this.NuevoButton.Text = "Nuevo";
-            this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.NuevoButton.UseVisualStyleBackColor = true;
-            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            this.Nuevobutton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevobutton.Location = new System.Drawing.Point(207, 212);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(79, 47);
+            this.Nuevobutton.TabIndex = 45;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // TelefonoTextBox
             // 
             this.TelefonoTextBox.Location = new System.Drawing.Point(112, 177);
             this.TelefonoTextBox.Name = "TelefonoTextBox";
             this.TelefonoTextBox.Size = new System.Drawing.Size(181, 20);
-            this.TelefonoTextBox.TabIndex = 4;
+            this.TelefonoTextBox.TabIndex = 40;
             // 
             // DireccionTextBox
             // 
             this.DireccionTextBox.Location = new System.Drawing.Point(112, 144);
             this.DireccionTextBox.Name = "DireccionTextBox";
             this.DireccionTextBox.Size = new System.Drawing.Size(181, 20);
-            this.DireccionTextBox.TabIndex = 3;
+            this.DireccionTextBox.TabIndex = 39;
             // 
             // NombreEmpresaTextBox
             // 
             this.NombreEmpresaTextBox.Location = new System.Drawing.Point(112, 109);
             this.NombreEmpresaTextBox.Name = "NombreEmpresaTextBox";
             this.NombreEmpresaTextBox.Size = new System.Drawing.Size(181, 20);
-            this.NombreEmpresaTextBox.TabIndex = 2;
+            this.NombreEmpresaTextBox.TabIndex = 38;
             // 
             // ProveedorIdTextBox
             // 
             this.ProveedorIdTextBox.Location = new System.Drawing.Point(112, 37);
             this.ProveedorIdTextBox.Name = "ProveedorIdTextBox";
             this.ProveedorIdTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ProveedorIdTextBox.TabIndex = 0;
+            this.ProveedorIdTextBox.TabIndex = 35;
             // 
             // label6
             // 
@@ -286,12 +286,12 @@
             this.groupBox1.Controls.Add(this.ButtonGuardar);
             this.groupBox1.Controls.Add(this.TelefonoTextBox);
             this.groupBox1.Controls.Add(this.EliminarButton);
-            this.groupBox1.Controls.Add(this.BuscarButton);
-            this.groupBox1.Controls.Add(this.NuevoButton);
+            this.groupBox1.Controls.Add(this.Buscarbutton);
+            this.groupBox1.Controls.Add(this.Nuevobutton);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(13, 94);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(663, 239);
+            this.groupBox1.Size = new System.Drawing.Size(663, 265);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Proveedores";
@@ -300,7 +300,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 347);
+            this.ClientSize = new System.Drawing.Size(691, 371);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroProveedor";
@@ -324,10 +324,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button ButtonGuardar;
         private System.Windows.Forms.Button EliminarButton;
-        private System.Windows.Forms.Button NuevoButton;
+        private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.TextBox TelefonoTextBox;
         private System.Windows.Forms.TextBox DireccionTextBox;
         private System.Windows.Forms.TextBox NombreEmpresaTextBox;

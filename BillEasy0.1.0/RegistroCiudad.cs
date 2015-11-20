@@ -73,51 +73,51 @@ namespace BillEasy0._1._0
             
             return retorno;
         }
-        private void BuscarButton_Click(object sender, EventArgs e)
+        private void Buscarbutton_Click(object sender, EventArgs e)
         {
             Ciudades ciudad = new Ciudades();
             int id;
-            int.TryParse(CiudadIdTextBox.Text, out id);
+            int.TryParse(CiudadIdtextBox.Text, out id);
             ciudad.Buscar(id);
-            CiudadIdTextBox.Text = ciudad.CiudadId.ToString();
+            CiudadIdtextBox.Text = ciudad.CiudadId.ToString();
             NombreTextBox.Text = ciudad.Nombre;
             CodigoPostalTextBox.Text = ciudad.CodigoPostal.ToString();
         }
 
-        private void NuevoButton_Click(object sender, EventArgs e)
+        private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            CiudadIdTextBox.Clear();
+            CiudadIdtextBox.Clear();
             NombreTextBox.Clear();
             CodigoPostalTextBox.Clear();
         }
 
-        private void GuardarButton_Click(object sender, EventArgs e)
+        private void ButtonGuardar_Click(object sender, EventArgs e)
         {
             Ciudades ciudad = new Ciudades();
-            if (CiudadIdTextBox.Text.Length > 0 && Error() == 0 && Validar() == 1)
+            if (CiudadIdtextBox.Text.Length > 0 && Error() == 0 && Validar() == 1)
             {
 
                 int id;
-                int.TryParse(CiudadIdTextBox.Text, out id);
+                int.TryParse(CiudadIdtextBox.Text, out id);
                 ciudad.CiudadId = id;
                 LlenarDatos(ciudad);
                 if (ciudad.Editar() && Validar() == 1 && Error() == 0)
                 {
                     MessageBox.Show("Ciudad Editada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    NuevoButton.PerformClick();
+                    Nuevobutton.PerformClick();
                 }
                 else
                 {
                     MessageBox.Show("Debe de completar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (CiudadIdTextBox.Text.Length == 0 && Error() == 0 && Validar() == 1)
+            else if (CiudadIdtextBox.Text.Length == 0 && Error() == 0 && Validar() == 1)
             {
                 LlenarDatos(ciudad);
                 if (ciudad.Insertar())
                 {
                     MessageBox.Show("Ciudad Guardada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    NuevoButton.PerformClick();
+                    Nuevobutton.PerformClick();
                 }
                 else
                 {
@@ -130,19 +130,19 @@ namespace BillEasy0._1._0
         {
             Ciudades ciudad = new Ciudades();
             int id;
-            if (CiudadIdTextBox.TextLength == 0)
+            if (CiudadIdtextBox.TextLength == 0)
             {
                 MessageBox.Show("Debe especificar el ID", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
-            if (CiudadIdTextBox.Text.Length > 0)
+            if (CiudadIdtextBox.Text.Length > 0)
             {
-                int.TryParse(CiudadIdTextBox.Text, out id);
+                int.TryParse(CiudadIdtextBox.Text, out id);
                 ciudad.CiudadId = id;
                 if (ciudad.Eliminar())
                 {
                     MessageBox.Show("Ciudad Eliminada correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    NuevoButton.PerformClick();
+                    Nuevobutton.PerformClick();
                 }
                 else
                 {

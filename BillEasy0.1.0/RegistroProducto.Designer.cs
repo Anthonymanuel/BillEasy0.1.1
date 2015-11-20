@@ -35,10 +35,10 @@
             this.PrecioTextBox = new System.Windows.Forms.TextBox();
             this.CostoTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.BuscarButton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
-            this.NuevoButton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
             this.CantidadTextBox = new System.Windows.Forms.TextBox();
             this.NombreTextBox = new System.Windows.Forms.TextBox();
             this.ProductoIdTextBox = new System.Windows.Forms.TextBox();
@@ -60,14 +60,14 @@
             this.MarcaComboBox.Location = new System.Drawing.Point(123, 114);
             this.MarcaComboBox.Name = "MarcaComboBox";
             this.MarcaComboBox.Size = new System.Drawing.Size(181, 21);
-            this.MarcaComboBox.TabIndex = 2;
+            this.MarcaComboBox.TabIndex = 81;
             // 
             // ITBISTextBox
             // 
             this.ITBISTextBox.Location = new System.Drawing.Point(383, 110);
             this.ITBISTextBox.Name = "ITBISTextBox";
             this.ITBISTextBox.Size = new System.Drawing.Size(181, 20);
-            this.ITBISTextBox.TabIndex = 7;
+            this.ITBISTextBox.TabIndex = 79;
             // 
             // label7
             // 
@@ -85,21 +85,21 @@
             this.ProveedorComboBox.Location = new System.Drawing.Point(123, 78);
             this.ProveedorComboBox.Name = "ProveedorComboBox";
             this.ProveedorComboBox.Size = new System.Drawing.Size(181, 21);
-            this.ProveedorComboBox.TabIndex = 1;
+            this.ProveedorComboBox.TabIndex = 62;
             // 
             // PrecioTextBox
             // 
             this.PrecioTextBox.Location = new System.Drawing.Point(383, 42);
             this.PrecioTextBox.Name = "PrecioTextBox";
             this.PrecioTextBox.Size = new System.Drawing.Size(181, 20);
-            this.PrecioTextBox.TabIndex = 5;
+            this.PrecioTextBox.TabIndex = 66;
             // 
             // CostoTextBox
             // 
             this.CostoTextBox.Location = new System.Drawing.Point(383, 77);
             this.CostoTextBox.Name = "CostoTextBox";
             this.CostoTextBox.Size = new System.Drawing.Size(181, 20);
-            this.CostoTextBox.TabIndex = 6;
+            this.CostoTextBox.TabIndex = 67;
             // 
             // label8
             // 
@@ -110,18 +110,18 @@
             this.label8.TabIndex = 78;
             this.label8.Text = "Costo:";
             // 
-            // BuscarButton
+            // Buscarbutton
             // 
-            this.BuscarButton.Image = global::BillEasy0._1._0.Properties.Resources._1443839488_file_search;
-            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarButton.Location = new System.Drawing.Point(230, 30);
-            this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(74, 42);
-            this.BuscarButton.TabIndex = 11;
-            this.BuscarButton.Text = "Buscar";
-            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BuscarButton.UseVisualStyleBackColor = true;
-            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
+            this.Buscarbutton.Image = global::BillEasy0._1._0.Properties.Resources._1443839488_file_search;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(230, 30);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(74, 42);
+            this.Buscarbutton.TabIndex = 77;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // GuardarButton
             // 
@@ -132,7 +132,7 @@
             this.GuardarButton.MinimumSize = new System.Drawing.Size(81, 44);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(81, 44);
-            this.GuardarButton.TabIndex = 9;
+            this.GuardarButton.TabIndex = 69;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.GuardarButton.UseVisualStyleBackColor = true;
@@ -145,45 +145,45 @@
             this.EliminarButton.Location = new System.Drawing.Point(518, 168);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(79, 44);
-            this.EliminarButton.TabIndex = 10;
+            this.EliminarButton.TabIndex = 70;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
-            // NuevoButton
+            // Nuevobutton
             // 
-            this.NuevoButton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
-            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(340, 168);
-            this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(79, 44);
-            this.NuevoButton.TabIndex = 8;
-            this.NuevoButton.Text = "Nuevo";
-            this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.NuevoButton.UseVisualStyleBackColor = true;
-            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            this.Nuevobutton.Image = global::BillEasy0._1._0.Properties.Resources._1445976554_Plus__Orange;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevobutton.Location = new System.Drawing.Point(340, 168);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(79, 44);
+            this.Nuevobutton.TabIndex = 68;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // CantidadTextBox
             // 
             this.CantidadTextBox.Location = new System.Drawing.Point(123, 182);
             this.CantidadTextBox.Name = "CantidadTextBox";
             this.CantidadTextBox.Size = new System.Drawing.Size(181, 20);
-            this.CantidadTextBox.TabIndex = 4;
+            this.CantidadTextBox.TabIndex = 65;
             // 
             // NombreTextBox
             // 
             this.NombreTextBox.Location = new System.Drawing.Point(123, 149);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(181, 20);
-            this.NombreTextBox.TabIndex = 3;
+            this.NombreTextBox.TabIndex = 64;
             // 
             // ProductoIdTextBox
             // 
             this.ProductoIdTextBox.Location = new System.Drawing.Point(123, 42);
             this.ProductoIdTextBox.Name = "ProductoIdTextBox";
             this.ProductoIdTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ProductoIdTextBox.TabIndex = 0;
+            this.ProductoIdTextBox.TabIndex = 60;
             // 
             // label6
             // 
@@ -256,11 +256,11 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.EliminarButton);
             this.groupBox1.Controls.Add(this.ProductoIdTextBox);
-            this.groupBox1.Controls.Add(this.NuevoButton);
+            this.groupBox1.Controls.Add(this.Nuevobutton);
             this.groupBox1.Controls.Add(this.NombreTextBox);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.CantidadTextBox);
-            this.groupBox1.Controls.Add(this.BuscarButton);
+            this.groupBox1.Controls.Add(this.Buscarbutton);
             this.groupBox1.Location = new System.Drawing.Point(12, 76);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(613, 244);
@@ -305,10 +305,10 @@
         private System.Windows.Forms.TextBox PrecioTextBox;
         private System.Windows.Forms.TextBox CostoTextBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
-        private System.Windows.Forms.Button NuevoButton;
+        private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.TextBox CantidadTextBox;
         private System.Windows.Forms.TextBox NombreTextBox;
         private System.Windows.Forms.TextBox ProductoIdTextBox;

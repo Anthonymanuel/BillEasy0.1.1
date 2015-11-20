@@ -116,7 +116,6 @@
             this.Controls.Add(this.DatostextBox);
             this.Controls.Add(this.BuscarcomboBox);
             this.Name = "ConsultaProveedores";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Proveedores";
             ((System.ComponentModel.ISupportInitialize)(this.DatosdataGridView)).EndInit();
             this.ResumeLayout(false);

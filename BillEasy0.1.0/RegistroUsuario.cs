@@ -92,15 +92,18 @@ namespace BillEasy0._1._0
                     AreaTextBox.Text = espacio.Replace(AreaTextBox.Text, " ");
 
                 }
+
+
+            
             return retorno;
         }
 
-        private void BuscarButton_Click(object sender, EventArgs e)
+        private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id;
             Usuarios usuario = new Usuarios();
 
-            int.TryParse(UsuarioIdTextBox.Text, out id);
+            int.TryParse(UsuarioIdtextBox.Text, out id);
             usuario.UsuarioId = id;
             usuario.Buscar(id);
             NombreTextBox.Text = usuario.Nombre;
@@ -109,9 +112,9 @@ namespace BillEasy0._1._0
             AreaTextBox.Text = usuario.Area;
             FechamaskedTextBox.Text = usuario.Fecha;
         }
-        private void NuevoButton_Click(object sender, EventArgs e)
+        private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            UsuarioIdTextBox.Clear();
+            UsuarioIdtextBox.Clear();
             NombreTextBox.Clear();
             NombreUsuarioTextBox.Clear();
             ContrasenaTextBox.Clear();
@@ -119,34 +122,34 @@ namespace BillEasy0._1._0
 
         }
 
-        private void GuardarButton_Click(object sender, EventArgs e)
+        private void ButtonGuardar_Click(object sender, EventArgs e)
         {
             Usuarios usuarios = new Usuarios();
 
-            if (UsuarioIdTextBox.Text.Length > 0 && Error() == 0 && Validar() == 1)
+            if (UsuarioIdtextBox.Text.Length > 0 && Error() == 0 && Validar() == 1)
             {
                 int id;
-                int.TryParse(UsuarioIdTextBox.Text, out id);
+                int.TryParse(UsuarioIdtextBox.Text, out id);
                 usuarios.UsuarioId = id;
                 LlenarDatos(usuarios);
                 if (usuarios.Editar())
                 {
                     MessageBox.Show("Usuario editado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    NuevoButton.PerformClick();
+                    Nuevobutton.PerformClick();
                 }
                 else
                 {
                     MessageBox.Show("Debe de completar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (UsuarioIdTextBox.Text.Length == 0 && Error() == 0  && Validar() == 1)
+            else if (UsuarioIdtextBox.Text.Length == 0 && Error() == 0  && Validar() == 1)
             {
 
                 LlenarDatos(usuarios);
                 if (usuarios.Insertar())
                 {
                     MessageBox.Show("Usuario guardado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    NuevoButton.PerformClick();
+                    Nuevobutton.PerformClick();
                 }
                 else
                 {
@@ -159,23 +162,23 @@ namespace BillEasy0._1._0
         {
             Usuarios usuario = new Usuarios();
 
-            if (UsuarioIdTextBox.TextLength == 0)
+            if (UsuarioIdtextBox.TextLength == 0)
             {
                 MessageBox.Show("Debe especificar el ID", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
 
-                if (UsuarioIdTextBox.Text.Length > 0)
+                if (UsuarioIdtextBox.Text.Length > 0)
                 {
                     int id;
-                    int.TryParse(UsuarioIdTextBox.Text, out id);
+                    int.TryParse(UsuarioIdtextBox.Text, out id);
                     usuario.UsuarioId = id;
 
                     if (usuario.Eliminar())
                     {
                         MessageBox.Show("Usuario Eliminado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        NuevoButton.PerformClick();
+                        Nuevobutton.PerformClick();
                     }
                     else
                     {
@@ -184,7 +187,7 @@ namespace BillEasy0._1._0
                 }
             }
         }
-        private void UsuarioIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void UsuarioIdtextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
@@ -192,6 +195,11 @@ namespace BillEasy0._1._0
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void RegistroUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

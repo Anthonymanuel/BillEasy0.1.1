@@ -18,76 +18,48 @@ namespace BillEasy0._1._0
             InitializeComponent();
         }
 
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            VentaIdtextBox.Clear();
+            CantidadtextBox.Clear();
+            PreciotextBox.Clear();
+            NFCtextBox.Clear();
+            TipoNFCtextBox.Clear();
+            TipoVentastextBox.Clear();
+            DescuentostextBox.Clear();
+            TotaltextBox.Clear();
+        }
 
         private void RegistroVentas_Load(object sender, EventArgs e)
         {
             Clientes cliente = new Clientes();
             Usuarios usuario = new Usuarios();
-            ClienteComboBox.DataSource = cliente.Listado("*", "1=1", "");
-            ClienteComboBox.DisplayMember = "Nombres";
-            ClienteComboBox.ValueMember = "ClienteId";
-            
-        }
+            ClientecomboBox.DataSource = cliente.Listado("*", "1=1", "");
+            ClientecomboBox.DisplayMember = "Nombres";
+            ClientecomboBox.ValueMember = "ClienteId";
 
-        private void BuscarVentaButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BuscarProductoButton_Click(object sender, EventArgs e)
-        {
-            int productoId;
-            int.TryParse(ProductoIdTextBox.Text, out productoId);
-            Productos producto = new Productos();
-
-
-            if (producto.Buscar(productoId))
-            {
-               // MessageBox.Show("Producto encontrado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                PrecioTextBox.Text = producto.Precio.ToString();
-                NombreTextBox.Text = producto.Nombre;
-                ITBISTextBox.Text = producto.Costo.ToString();
-               /* foreach (DataGridViewRow row in VentasDataGridView.Rows)
-                {
-
-                    codigo += Convert.ToString(row.Cells["ProductoId"].Value);
-
-                }*/
-
-            }
-            else
-            {
-                MessageBox.Show("El producto no existe", "alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void AgregarButton_Click_1(object sender, EventArgs e)
-        {
-            VentasDataGridView.Rows.Add(ProductoIdTextBox.Text,NombreTextBox.Text, CantidadTextBox.Text, PrecioTextBox.Text,ITBISTextBox.Text, DescuentosTextBox.Text);
-        }
-           
-        private void NuevoButton_Click(object sender, EventArgs e)
-        {
-            VentaIdTextBox.Clear();
-            ProductoIdTextBox.Clear();
-            CantidadTextBox.Clear();
-            PrecioTextBox.Clear();
-            NFCTextBox.Clear();
-            TipoNFCTextBox.Clear();
-            TipoVentasTextBox.Clear();
-            DescuentosTextBox.Clear();
-            TotallTextBox.Clear();
         }
         public int Convertir()
         {
             int id;
-            int.TryParse(VentaIdTextBox.Text,out id);
+            int.TryParse(VentaIdtextBox.Text, out id);
             return id;
         }
-        private void GuardarButton_Click(object sender, EventArgs e)
+        public void LlenarDatos(Ventas venta)
         {
-            Ventas venta = new Ventas();
-            venta.Insertar();
+            float itbis, total;
+            float.TryParse(ITBIStextBox.Text, out itbis);
+            float.TryParse(TotaltextBox.Text,out total);
+            int id;
+            int.TryParse(VentaIdtextBox.Text, out id);
+            venta.VentaId = id;
+            venta.ClienteId = (int)ClientecomboBox.SelectedValue;
+            venta.TipoVenta = TipoVentastextBox.Text;
+            venta.NFC = NFCtextBox.Text;
+            venta.TipoNFC = TipoNFCtextBox.Text;
+            venta.Fecha = FechadateTimePicker.Text;
+            venta.ITBIS = itbis;
+            venta.Total = total;
         }
         private void EliminarButton_Click(object sender, EventArgs e)
         {
@@ -97,12 +69,82 @@ namespace BillEasy0._1._0
             if (ventas.Eliminar())
             {
                 MessageBox.Show("Venta Eliminada","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                NuevoButton.PerformClick();
+                Nuevobutton.PerformClick();
             }
             else
             {
                 MessageBox.Show("Error al eliminar","alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+        }
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+            Ventas venta = new Ventas();
+            LlenarDatos(venta);
+            if (venta.Insertar())
+            {
+                MessageBox.Show("Venta Guardada","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Nuevobutton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+        private void BuscarProductobutton_Click(object sender, EventArgs e)
+        {
+            int productoId;
+            int.TryParse(ProductoIdtextBox.Text, out productoId);
+            Productos producto = new Productos();
+
+            
+            if (producto.Buscar(productoId))
+            {
+                //MessageBox.Show("Producto encontrado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PreciotextBox.Text = producto.Precio.ToString();
+                NombretextBox.Text = producto.Nombre;
+                string codigo = "";
+                ITBIStextBox.Text = producto.Costo.ToString();
+                //VentasdataGridView.Rows.Add(producto.ProductoId.ToString(), producto.Nombre, CantidadtextBox.Text, producto.Precio.ToString(), producto.ITBIS.ToString(), DescuentostextBox.Text);
+
+                foreach (DataGridViewRow row in VentasdataGridView.Rows)
+                {
+
+                     codigo += Convert.ToString(row.Cells["ProductoId"].Value);
+
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show("El producto no existe", "alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+         //VentasdataGridView.Columns.Insert(0,producto.Precio.ToString());
+        }
+
+        private void BuscarVentabutton_Click(object sender, EventArgs e)
+        {
+            Ventas ventas = new Ventas();
+            if (ventas.Buscar(Convertir()))
+            {
+                ClientecomboBox.SelectedValue = ventas.ClienteId;
+                TipoVentastextBox.Text = ventas.TipoVenta;
+                NFCtextBox.Text = ventas.NFC;
+                TipoNFCtextBox.Text = ventas.TipoNFC;
+                FechadateTimePicker.Text = ventas.Fecha;
+                ITBIStextBox.Text = ventas.ITBIS.ToString();
+                TotaltextBox.Text = ventas.Total.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Id invalido","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void Agregarbutton_Click(object sender, EventArgs e)
+        {
+            VentasdataGridView.Rows.Add(ProductoIdtextBox.Text, NombretextBox.Text, CantidadtextBox.Text, PreciotextBox.Text, ITBIStextBox.Text, DescuentostextBox.Text);
         }
     }
 }

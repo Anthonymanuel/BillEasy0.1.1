@@ -53,9 +53,9 @@ namespace BLL
             StringBuilder comando = new StringBuilder();
             bool retorno = false;
 
-            retorno = conexion.Ejecutar(String.Format("Insert into Ventas(ClienteId,Fecha,ITBIS,Descuento,TipoVenta,NFC,TipoNFC,Total) values({0},'{1}',{2},{3},'{4}','{5}','{6}',{7})", this.ClienteId, this.Fecha, this.ITBIS, this.Descuento, this.TipoVenta, this.NFC, this.TipoNFC, this.Total));
+            retorno = conexion.Ejecutar(String.Format("Insert into Ventas(ClienteId,Fecha,ITBIS,Descuentos,TipoVentas,NFC,TipoNFC,Total) values({0},'{1}',{2},{3},'{4}','{5}','{6}',{7})", this.ClienteId, this.Fecha, this.ITBIS, this.Descuento, this.TipoVenta, this.NFC, this.TipoNFC, this.Total));
 
-            if (retorno)
+            /*if (retorno)
             {
                 this.VentaId = (int)conexion.ObtenerDatos("Select MAX(VentaId) as VentaId from Ventas").Rows[0]["VentaId"];
 
@@ -65,7 +65,7 @@ namespace BLL
                 }
 
                 retorno = conexion.Ejecutar(comando.ToString());
-            }
+            }*/
 
             return retorno;
         }
@@ -95,8 +95,7 @@ namespace BLL
         {
             ConexionDb conexion = new ConexionDb();
             bool retorno = false;
-            retorno = conexion.Ejecutar("Delete from Ventas where VentaId = " +this.VentaId + ";" 
-                                          + "Delete from DetallesVentas where VentaId = " +this.VentaId);
+            retorno = conexion.Ejecutar("Delete from Ventas where VentaId = " +this.VentaId + ";" + "Delete from DetallesVentas where VentaId = " +this.VentaId);
 
             return retorno;
 
@@ -109,24 +108,24 @@ namespace BLL
             DataTable dtUsuarios = new DataTable();
 
             dt = conexion.ObtenerDatos(String.Format("Select *from Ventas where VentaId = {0} ",idBuscado));
-            dtUsuarios = conexion.ObtenerDatos(String.Format("Select V.VentaId,D.UsuarioId,D.ClienteId,D.Cantidad,D.Precio from DetallesVentas D inner join Ventas V on D.VentaId = V.VentaId where VentaId = {0} ", idBuscado));
+           // dtUsuarios = conexion.ObtenerDatos(String.Format("Select V.VentaId,D.UsuarioId,D.ClienteId,D.Cantidad,D.Precio from DetallesVentas D inner join Ventas V on D.VentaId = V.VentaId where VentaId = {0} ", idBuscado));
 
             if (dt.Rows.Count > 0)
             {
-                this.ClienteId = (int)dt.Rows[0]["ClieneteId"];
+                this.ClienteId = (int)dt.Rows[0]["ClienteId"];
                 this.Fecha = dt.Rows[0]["Fecha"].ToString();
-                this.ITBIS = (float)dt.Rows[0]["ITBIS"];
-                this.Descuento = (float)dt.Rows[0]["Descuento"];
-                this.TipoVenta = dt.Rows[0]["TipoVenta"].ToString();
+                //this.ITBIS = (float)dt.Rows[0]["ITBIS"];
+                //this.Descuento = (float)dt.Rows[0]["Descuento"];
+                this.TipoVenta = dt.Rows[0]["TipoVentas"].ToString();
                 this.NFC = dt.Rows[0]["NFC"].ToString();
                 this.TipoNFC = dt.Rows[0]["TipoNFC"].ToString();
-                this.Total = (float)dt.Rows[0]["Total"];
+                //this.Total = (float)dt.Rows[0]["Total"];
 
-                this.Producto.Clear();
+                /*this.Producto.Clear();
                 foreach(DataRow row in dtUsuarios.Rows)
                 {
                     this.AgregarProducto((int)row["UsuarioId"]);
-                }
+                }*/
             }
 
             return dt.Rows.Count > 0;

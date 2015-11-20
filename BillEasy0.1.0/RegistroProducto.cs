@@ -123,29 +123,7 @@ namespace BillEasy0._1._0
 
             return retorno;
         }
-
-        public int Convertidor()
-        {
-            int id;
-            int.TryParse(ProductoIdTextBox.Text, out id);
-            return id;
-        }
-
-        private void RegistroProducto_Load(object sender, EventArgs e)
-        {
-            Proveedores proveedor = new Proveedores();
-            Marcas marca = new Marcas();
-            ProveedorComboBox.DataSource = proveedor.Listado("ProveedorId ,CiudadId, NombreEmpresa,Direccion,Telefono,Email,RNC,NombreRepresentante,Celular", "1=1", "");
-            ProveedorComboBox.DisplayMember = "NombreEmpresa";
-            ProveedorComboBox.ValueMember = "ProveedorId";
-
-            MarcaComboBox.DataSource = marca.Listado("MarcaId,Nombre", "1=1", "");
-            MarcaComboBox.DisplayMember = "Nombre";
-            MarcaComboBox.ValueMember = "MarcaId";
-
-        }
-
-        private void BuscarButton_Click(object sender, EventArgs e)
+        private void Buscarbutton_Click(object sender, EventArgs e)
         {
             Productos producto = new Productos();
             int id;
@@ -159,7 +137,7 @@ namespace BillEasy0._1._0
             ITBISTextBox.Text = producto.ITBIS.ToString();
         }
 
-        private void NuevoButton_Click(object sender, EventArgs e)
+        private void Nuevobutton_Click(object sender, EventArgs e)
         {
             ProductoIdTextBox.Clear();
             NombreTextBox.Clear();
@@ -167,6 +145,12 @@ namespace BillEasy0._1._0
             PrecioTextBox.Clear();
             CostoTextBox.Clear();
             ITBISTextBox.Clear();
+        }
+        public int Convertidor()
+        {
+            int id;
+            int.TryParse(ProductoIdTextBox.Text, out id);
+            return id;
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
@@ -178,7 +162,7 @@ namespace BillEasy0._1._0
                 if (productos.Insertar() && Error() == 0)
                 {
                     MessageBox.Show("Producto insertado","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    NuevoButton.PerformClick();
+                    Nuevobutton.PerformClick();
                 }
                 else
                 {
@@ -192,7 +176,7 @@ namespace BillEasy0._1._0
                 if(productos.Editar())
                 {
                     MessageBox.Show("Producto editado","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    NuevoButton.PerformClick();
+                    Nuevobutton.PerformClick();
                 }
                 else
                 {
@@ -211,12 +195,26 @@ namespace BillEasy0._1._0
                 producto.ProveedorId = id;
                 if (producto.Eliminar())
                     MessageBox.Show("Producto Eliminado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                NuevoButton.PerformClick();
+                Nuevobutton.PerformClick();
             }
             else
             {
                 MessageBox.Show("Error al eliminar el producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void RegistroProducto_Load(object sender, EventArgs e)
+        {
+            Proveedores proveedor = new Proveedores();
+            Marcas marca = new Marcas();
+            ProveedorComboBox.DataSource = proveedor.Listado("ProveedorId ,CiudadId, NombreEmpresa,Direccion,Telefono,Email,RNC,NombreRepresentante,Celular", "1=1","");
+            ProveedorComboBox.DisplayMember = "NombreEmpresa";
+            ProveedorComboBox.ValueMember = "ProveedorId";
+                
+            MarcaComboBox.DataSource = marca.Listado("MarcaId,Nombre","1=1","");
+            MarcaComboBox.DisplayMember = "Nombre";
+            MarcaComboBox.ValueMember = "MarcaId";
+             
         }
     }
 }
